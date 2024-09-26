@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogoF5 from '../logo/Logo.jsx';
-import { Nav, NavLinks, StyledLink } from './styled-navbar-public.jsx';
+import { Nav, NavLinks, StyledLink } from './styled-navbar-coders.jsx';
 
 const NavbarCoders = () => {
 return (

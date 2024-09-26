@@ -9,9 +9,7 @@ const [count, setCount] = useState(0)
 
 return (
   <>
-  <LogoF5/>
-  <NavbarPublic/>
-  <NavbarCoders/>
+ 
   </>
 )
 };

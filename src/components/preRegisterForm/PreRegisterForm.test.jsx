@@ -6,7 +6,7 @@ import PreRegisterForm from './PreRegisterForm';
 describe('PreRegisterForm component', () => {
   
   it('should render the form title', () => {
-    // Renderizamos el componente con un MemoryRouter ya que el componente usa enlaces de React Router
+    
     render(
       <MemoryRouter>
         <PreRegisterForm />

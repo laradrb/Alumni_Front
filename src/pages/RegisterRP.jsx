@@ -1,9 +1,11 @@
 import React from "react";
+import RegisterRPComponent from "../components/register/registeRP/RegisterRPComponent";
 
-
-const RegisterRP  = () => {
+const RegisterRP = () => {
     return (
-<></>
+        <>
+        <RegisterRPComponent/>
+        </>
     )
 }
 

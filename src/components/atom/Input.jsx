@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const InputGeneral = styled.input`
     width: 32.813rem;
     padding: 1.2rem;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     border: 0.063rem solid #e9e9e6;
     box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;

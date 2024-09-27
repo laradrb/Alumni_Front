@@ -1,6 +1,7 @@
 import React from "react";
 import CardCoder from "../components/landingPage/cardCoders/CardCoder.jsx";
 import { GeneralContainer, Button } from "../components/landingPage/cardCoders/styleCard";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       />
     
     </GeneralContainer>
+        <Footer/>
   );
 };
 

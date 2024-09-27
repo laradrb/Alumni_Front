@@ -1,32 +1,31 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import NavbarCoders from './Navbar-coders.jsx';
 import { BrowserRouter } from 'react-router-dom';
+import NavbarCompanies from './Navbar-companiess.jsx';
 
-
-describe('NavbarCoders Component', () => {
+describe('NavbarPublic Component', () => {
 it('renders correctly', () => {
     render(
     <BrowserRouter>
-        <NavbarCoders />
+        <NavbarCompanies />
     </BrowserRouter>
     );
     
 
-    expect(screen.getByText('ALUMNI')).toBeInTheDocument();
-    expect(screen.getByText('CODERS')).toBeInTheDocument();
-    expect(screen.getByText('OFERTAS')).toBeInTheDocument();
+    expect(screen.getByText('APLICACIONES')).toBeInTheDocument();
     expect(screen.getByText('PERFIL')).toBeInTheDocument();
     expect(screen.getByText('CERRAR SESIÓN')).toBeInTheDocument();
 });
 
-it('renders correctly ', () => {
+it('renders correctly LogoF5', () => {
     render(
     <BrowserRouter>
-        <NavbarCoders />
+        <NavbarCompanies />
     </BrowserRouter>
     );
+
+
     const logo = screen.getByRole('img'); 
     expect(logo).toBeInTheDocument();
 });

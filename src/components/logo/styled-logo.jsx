@@ -7,7 +7,7 @@ align-items: center;
 cursor: pointer;
 
 img {
-    width: 80px;  
+    width: 7.75rem;  
     height: auto;
 }
 

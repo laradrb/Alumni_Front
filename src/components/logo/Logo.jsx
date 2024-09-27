@@ -8,7 +8,7 @@ const LogoF5 = () => {
         <img src={Logo} alt="Logo" />
         </LogoImg>
     )
-   
+
 };
 export default LogoF5;
 

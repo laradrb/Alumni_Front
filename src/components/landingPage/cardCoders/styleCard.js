@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export const CardContainer = styled.div`
   width: 34.375rem;
   height: 30rem;
-  padding: 20px;
+  padding: 1.5rem;
   margin: 10px;
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -13,15 +13,17 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-image: linear-gradient(to bottom right, #FF4700, #3700b3);
+border: 0.125rem solid #FF4700;
+
 `;
 
 export const CardTitle = styled.h2`
   font-size: 2.5rem;
   color: #FF4700;
   margin-bottom: 0.625rem;
-  font-weight: bold;
-  font family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2rem;
     `;
 
 export const Text = styled.p`
@@ -30,35 +32,28 @@ export const Text = styled.p`
   margin-bottom: 1.25rem;
   font-family: 'Poppins', sans-serif;
   font-weight: medium;
-`;
+  margin-top: 5.125rem;
+  text-align: center;
+  max-width: 24rem;
+  `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   padding: 10px 20px;
   background-color: #FF4700;
   color: white;
   border: none;
+  text-decoration: none;
   border-radius: 3.125rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 3rem;
+  align-items: center;
 
   &:hover {
-    background-color: #3700b3;
+        background-color: white;
+        color: #f74702;
+        border:0.125rem solid #f74702;
+    
   }
 `;
 
-export const LinkButton = styled.button`
-  background: none;
-  border: none;
-  color: #6200ea;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0;
-  font-size: 16px;
-  transition: color 0.3s ease;
 
-  &:hover {
-    color: #ff4700; /* Cambia de color al hacer hover */
-  }
-
-  &:focus {
-    outline: none; /* Quita el borde de enfoque predeterminado */
-  }
-`;

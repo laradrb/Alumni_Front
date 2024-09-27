@@ -2,14 +2,25 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
+export const GeneralContainer = styled.div`
+  display: flex;
+  gap: 1.25rem; 
+  justify-content: center; 
+  padding: 1.25rem; 
+  align-items: stretch; 
+  justify-content: center;
+  overflow-x: auto;
+`;
+
+
 export const CardContainer = styled.div`
   width: 34.375rem;
   height: 30rem;
   padding: 1.5rem;
-  margin: 10px;
+  margin: 0.625rem;
   background-color: #FFFFFF;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +49,7 @@ export const Text = styled.p`
   `;
 
 export const Button = styled(Link)`
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   background-color: #FF4700;
   color: white;
   border: none;

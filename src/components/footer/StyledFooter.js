@@ -8,11 +8,13 @@ export const FooterContainer = styled.footer`
   align-items: center;
   border-top: 0.3rem solid #ccc;
   box-shadow: 0 -0.0625rem 0.625rem rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
 `;
 
 export const LeftSection = styled.div`
   display: flex;
   align-items: center;
+  margin-left: 1.5rem;
   img {
     height: 3.875rem; 
     margin-right: 0.625rem; 
@@ -30,10 +32,16 @@ export const RightSection = styled.div`
   a {
     margin-left: 1rem; 
     text-decoration: none;
-    color: black;
+    color: #020100;
     font-size: 1.125rem; 
     position: relative;
     padding-right: 0.625rem; 
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   a:not(:last-child)::after {
@@ -41,11 +49,13 @@ export const RightSection = styled.div`
     position: absolute;
     right: 0;
     padding-left: 0.625rem; 
-    color: #000;
+    color: #020100;
+    margin-right: -0.3rem;
   }
 
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #FF4700;
   }
 `;
 
@@ -67,6 +77,7 @@ export const IconContainer = styled.div`
 
     &:hover img {
     filter: invert(43%) sepia(95%) saturate(6814%) hue-rotate(0deg) brightness(103%) contrast(105%);
+    color: #FF4700;
 }
   }
 `;

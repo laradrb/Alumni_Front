@@ -7,25 +7,27 @@ flex-direction: row-reverse;
 justify-content: space-between;
 align-items: center;
 padding: 0 2.5rem;
-height: 5.625rem;
+height: 7.3125rem;
 background-color: #FFF;
-box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
-margin: 1.25rem;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+width: 90rem;
+flex-shrink: 0;
 `;
 
 export const NavLinks = styled.div`
 display: flex;
-gap: 5.625rem;
+gap: 3rem;
 `;
 
 export const StyledLink = styled(NavLink)`
-color: black;
+color: #020100;
 text-decoration: none;
 font-size: 1rem;
 font-family: 'Poppins', sans-serif;
-font-weight: 600;
 position: relative;
-letter-spacing: 0.1em;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
 
 
 &.active, &:hover {  

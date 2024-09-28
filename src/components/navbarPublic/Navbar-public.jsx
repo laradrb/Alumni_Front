@@ -6,7 +6,7 @@ const NavbarPublic = () => {
 return (
     <Nav>
     <NavLinks>
-        <StyledLink to="/">HOME</StyledLink>
+        <StyledLink to="/home">HOME</StyledLink>
         <StyledLink to="/login">INICIAR SESIÓN</StyledLink>
         <StyledLink to="/preregister">REGISTRARSE</StyledLink>
     </NavLinks>

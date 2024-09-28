@@ -21,8 +21,8 @@ export const ImageSection = styled.div`
     overflow: hidden;
 `;
 export const StyledImage = styled.img`
-    width: 90%;
-    height: 90%;
+    width: 33.195rem;
+    height: 37.813rem;
     margin-top: 1.875rem;
     border-radius: 1.25rem;
     object-fit: cover;

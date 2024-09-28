@@ -27,6 +27,8 @@ export const Title2 = styled.h2`
   font-family: "Poppins", sans-serif;
   margin-top: 0.5rem;
   text-align: center;
+  font-style: normal;
+  font-weight: 600;
 `;
 
 export const Container2 = styled.div`

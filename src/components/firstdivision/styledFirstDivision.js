@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: stretch;
   max-width: 75rem; 
   margin: 0 auto;
-  margin-top: 12rem;
+  margin-top: 3.5rem;
 `;
 
 export const ImageWrapper = styled.div`

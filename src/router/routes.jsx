@@ -28,10 +28,6 @@ export const router = createBrowserRouter([
                 path: "/registerRP",
                 element: <RegisterRP/>,
             },
-            {
-                path: "/alumni",
-                element: <Alumni/>,
-            },
         ],
     },
 ]);

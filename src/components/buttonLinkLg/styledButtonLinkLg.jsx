@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-// Estilos para el botón de enlace
+
 export const StyledButtonLinkLg = styled.a`
   background-color: #FF4700; 
   border:0.125rem solid #FF4700;
-   box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06); 
+  box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06); 
   color: white; 
   display: inline-block;
   width: 32.8125rem; 

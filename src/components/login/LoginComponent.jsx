@@ -119,7 +119,7 @@ const LoginComponent = () => {
                     <SubmitButton type="submit">Iniciar sesión</SubmitButton>
                 </form>
                 <SignUpLink>
-                    ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+                    ¿No tienes cuenta? <a href="/preregister">Regístrate aquí</a>
                 </SignUpLink>
             </FormSection>
             <ImageSection>

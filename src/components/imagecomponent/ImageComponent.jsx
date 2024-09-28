@@ -4,33 +4,38 @@ import styled from 'styled-components';
 import GlobalStyle from '../../styled/GlobalStyle'
 
 
-const Paragraph = styled.p`
+const ParagraphContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 73.875rem;
-    margin-left: 11.344rem;
-    margin-right: 11.344rem;
     width: 67.313rem;
     height: 28.125rem;
+    margin: 12.5rem auto;
+`;
+const Paragraph = styled.p`
     font-size: 2rem;
-    color: #020100;
-    font-family: 'Poppins', sans-serif;
     text-align: center;
-    
+    color: #020100;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    line-height: normal;
+    text-align: center;
+    margin-right: 11.344rem;
+    margin-left: 11.344rem; 
 `;
 const CentralImage = styled.div`
     display: flex;
     overflow: hidden;
     justify-content: center;
-    margin-top: -5rem;
+    margin-top: 5rem;
 `;
 const StyledCentralImage = styled.img`
     width: 75rem;
-    height: 42.88rem;
+    height: 42.188rem;
     border-radius: 1.875rem;
     object-fit: cover;
-    margin-bottom: 13.75rem;
+    margin-bottom: 6.875rem;
 `;
 
 
@@ -40,8 +45,8 @@ const ImageComponent = () => {
         <GlobalStyle/>
             <Paragraph>
                 ¡Felicidades por vuestra graduación!
-                    Este logro refleja vuestra dedicación, esfuerzo y pasión por el aprendizaje.
-                    Habéis superado cada desafío con perseverancia, y ahora comienza una nueva estapa llena de oportunidades. Estamos seguros de que el futuro os deparará nuevos retos y oportunidades en el mundo de la tecnología.
+                    Este logro refleja vuestra <br/>dedicación, esfuerzo y pasión por el aprendizaje.
+                    Habéis superado<br/> cada desafío con perseverancia, y ahora comienza una nueva<br/> estapa llena de oportunidades. Estamos seguros de que el futuro<br/> os deparará nuevos retos y oportunidades en el mundo de la <br/> tecnología.
                     ¡Enhorabuena Coders!
             </Paragraph>
             <CentralImage>

@@ -2,6 +2,7 @@ import React from "react";
 import About from "../components/firstdivision/FirstDivision";
 import OrangeCard from "../components/orangeCard/orangeCard";
 import Carrousel from "../components/carousel/Carousel";
+import HalfCircle from "../components/halfCircle/HalfCircle";
 import CardCoder from "../components/landingPage/cardCoders/CardCoder.jsx";
 import { GeneralContainer, Button } from "../components/landingPage/cardCoders/styleCard";
 
@@ -11,6 +12,7 @@ const Home = () => {
       <About/>
       <OrangeCard/>
       <Carrousel/>
+      <HalfCircle/>
       <GeneralContainer>
       <CardCoder
         title="Coders"

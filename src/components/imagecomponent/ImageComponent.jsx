@@ -1,48 +1,13 @@
 import React from 'react';
 import alumni from '../../assets/img/alumni.jpg';
-import styled from 'styled-components';
+import { ParagraphContainer, Paragraph, CentralImage, StyledCentralImage} from './styledImageComponent';
 import GlobalStyle from '../../styled/GlobalStyle'
-
-
-const ParagraphContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 67.313rem;
-    height: 28.125rem;
-    margin: 12.5rem auto;
-`;
-const Paragraph = styled.p`
-    font-size: 2rem;
-    text-align: center;
-    color: #020100;
-    font-style: normal;
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
-    line-height: normal;
-    text-align: center;
-    margin-right: 9.344rem;
-    margin-left: 9.344rem;
-`;
-const CentralImage = styled.div`
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    margin-top: 5rem;
-`;
-const StyledCentralImage = styled.img`
-    width: 75rem;
-    height: 42.188rem;
-    border-radius: 1.875rem;
-    object-fit: cover;
-    margin-bottom: 6.875rem;
-`;
-
 
 const ImageComponent = () => {
     return (
         <>
         <GlobalStyle/>
+            <ParagraphContainer>
             <Paragraph>
                 ¡Felicidades por vuestra graduación!
                     Este logro refleja vuestra <br/>dedicación, esfuerzo y pasión por el aprendizaje.
@@ -50,6 +15,7 @@ const ImageComponent = () => {
                     os deparará nuevos retos y oportunidades en el mundo de la tecnología.
                     ¡Enhorabuena Coders!
             </Paragraph>
+            </ParagraphContainer>
             <CentralImage>
                 <StyledCentralImage src={alumni} alt="Alumni" />
             </CentralImage> 

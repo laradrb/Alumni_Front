@@ -1,5 +1,6 @@
 import React from "react";
 import About from "../components/firstdivision/FirstDivision";
+import OrangeCard from "../components/orangeCard/orangeCard";
 import CardCoder from "../components/landingPage/cardCoders/CardCoder.jsx";
 import { GeneralContainer, Button } from "../components/landingPage/cardCoders/styleCard";
 
@@ -7,6 +8,7 @@ const Home = () => {
     return (
         <>
       <About/>
+      <OrangeCard/>
       <GeneralContainer>
       <CardCoder
         title="Coders"

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Input from '../../atom/Input';
 import LargeButton from '../../atom/LargeButton';
 import registerRP from '../../../assets/img/registerRP.jpg';
-import GlobalStyle from '../../styled/GlobalStyle';
+import GlobalStyle from '../../../styled/GlobalStyle';
 
 const RegisterContainer = styled.div`
     display: flex;

@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import PreRegister from "../pages/PreRegister";
 import RegisterRP from "../pages/RegisterRP";
+import Alumni from "../pages/Alumni"
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
             {
                 path: "/registerRP",
                 element: <RegisterRP/>,
+            },
+            {
+                path: "/alumni",
+                element: <Alumni/>,
             },
         ],
     },

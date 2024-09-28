@@ -21,8 +21,8 @@ const Paragraph = styled.p`
     font-family: 'Poppins', sans-serif;
     line-height: normal;
     text-align: center;
-    margin-right: 11.344rem;
-    margin-left: 11.344rem; 
+    margin-right: 9.344rem;
+    margin-left: 9.344rem;
 `;
 const CentralImage = styled.div`
     display: flex;
@@ -46,7 +46,8 @@ const ImageComponent = () => {
             <Paragraph>
                 ¡Felicidades por vuestra graduación!
                     Este logro refleja vuestra <br/>dedicación, esfuerzo y pasión por el aprendizaje.
-                    Habéis superado<br/> cada desafío con perseverancia, y ahora comienza una nueva<br/> estapa llena de oportunidades. Estamos seguros de que el futuro<br/> os deparará nuevos retos y oportunidades en el mundo de la <br/> tecnología.
+                    Habéis superado cada desafío con perseverancia, y ahora comienza una nueva estapa llena de oportunidades. Estamos seguros de que el futuro
+                    os deparará nuevos retos y oportunidades en el mundo de la tecnología.
                     ¡Enhorabuena Coders!
             </Paragraph>
             <CentralImage>

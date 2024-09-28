@@ -25,52 +25,39 @@ export default PreRegisterForm;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 10rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Espero que tome la altura completa de la ventana */
+  height: 100%; 
   position: relative;
 `;
 
 const Title = styled.h1`
   font-family: Poppins, Helvetica, Arial, sans-serif;
-  font-size: 2.5rem; /* 40px */
+  font-size: 2.5rem;
   color: #373737;
   
-  padding-bottom: 1.5rem; /*
+  padding-bottom: 1.5rem; 
   text-align: center;
 
-  @media (max-width: 768px) {
-    font-size: 1.5rem; /* 24px */
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.875rem; /* 20px */
-  }
 `;
 
-// Container para el cuadrado con subtítulo y botones
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 39.25rem; /* 628px convertido a rem */
-  height: 35.875rem; /* 574px convertido a rem */
+  width: 39.25rem; 
+  height: 35.875rem; 
   padding: 2rem;
   background-color: white;
-  border-radius: 1rem; /* 16px convertido a rem */
-  border: 0.0625rem solid #ff4700; /* 1px convertido a rem */
-  box-shadow: 0rem 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* 0px 4px 6px convertido a rem */
+  border-radius: 1rem; 
+  border: 0.125rem solid #ff4700; 
+  box-shadow: 0rem 0.25rem 0.375rem rgba(0, 0, 0, 0.1); 
 
-  @media (max-width: 768px) {
-    padding: 1rem;
-    width: 90%;
-    height: auto;
-  }
 `;
 
-// SubTitleWrapper para centrar el subtítulo verticalmente entre el borde superior y el primer botón
 const SubTitleWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -81,17 +68,10 @@ const SubTitleWrapper = styled.div`
 
 const SubTitle = styled.h2`
   font-family: Poppins, sans-serif;
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem; 
   color: #373737;
   text-align: center;
 
-  @media (max-width: 768px) {
-    font-size: 1.25rem; /* 20px */
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem; /* 16px */
-  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -101,7 +81,5 @@ const ButtonWrapper = styled.div`
   margin-top: 1.5rem;/* Para bajar un poco el conjunto de botones */
   padding-bottom: 5rem; 
 
-  @media (max-width: 480px) {
-    gap: 1.5rem; /* 24px de espacio entre los botones en pantallas pequeñas */
-  }
+
 `;

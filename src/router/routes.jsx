@@ -4,6 +4,7 @@ import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Alumni from "../pages/Alumni";
+import RegisterRP from "../pages/RegisterRP";
 
 export const router = createBrowserRouter([
     {
@@ -22,7 +23,10 @@ export const router = createBrowserRouter([
                 path: "/alumni",
                 element: <Alumni />,
             },
-            
+            {
+                path: "/registerRP",
+                element: <RegisterRP/>,
+            },
         ],
     },
 ]);

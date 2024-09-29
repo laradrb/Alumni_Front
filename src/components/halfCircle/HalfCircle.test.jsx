@@ -8,7 +8,7 @@ describe('HalfCircle Component', () => {
         render(<HalfCircle />);
         const image = screen.getByAltText('orange half circle with black oval in the middle');
         expect(image).toBeInTheDocument();
-        expect(image).toHaveAttribute('src', expect.stringContaining('orangeCircle.jpg'));
+        expect(image).toHaveAttribute('src', expect.stringContaining('geometric.png'));
     });
 
     test('renders the text content correctly', () => {

@@ -8,7 +8,7 @@ const ImageComponent = () => {
         <>
         <GlobalStyle/>
             <ParagraphContainer>
-            <Paragraph>
+            <Paragraph aria-label="Mensaje de felicitación por graduación">
                 ¡Felicidades por vuestra graduación!
                     Este logro refleja vuestra <br/>dedicación, esfuerzo y pasión por el aprendizaje.
                     Habéis superado cada desafío con perseverancia, y ahora comienza una nueva estapa llena de oportunidades. Estamos seguros de que el futuro
@@ -17,7 +17,7 @@ const ImageComponent = () => {
             </Paragraph>
             </ParagraphContainer>
             <CentralImage>
-                <StyledCentralImage src={alumni} alt="Alumni" />
+                <StyledCentralImage src={alumni} alt="Grupo de mujeres entregando diplomas de graduación" />
             </CentralImage> 
         </>      
     );

@@ -23,7 +23,7 @@ describe('ImageComponent', () => {
             </BrowserRouter>
         );
         
-        const image = screen.getByAltText('Alumni');
+        const image = screen.getByAltText('Grupo de mujeres entregando diplomas de graduación');
         expect(image).toBeInTheDocument();
         expect(image).toHaveAttribute('src', expect.stringContaining('alumni.jpg'));
         });    

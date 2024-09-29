@@ -13,7 +13,7 @@ describe('RegisterCompanyComponent', () => {
         );
 
         expect(screen.getByText('Registro para Empresas')).toBeInTheDocument();
-        expect(screen.getByText('Regístrate para acceder a tu cuenta en Alumni.')).toBeInTheDocument();
+        expect(screen.getByText('Regístrate para acceder a tu cuenta en Alumni')).toBeInTheDocument();
         expect(screen.getByText('¿Ya tienes cuenta?')).toBeInTheDocument();
         expect(screen.getByText('Inicia sesión aquí')).toBeInTheDocument();
 

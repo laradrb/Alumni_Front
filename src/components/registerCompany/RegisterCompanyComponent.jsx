@@ -12,7 +12,7 @@ const RegisterCompanyComponent = () => {
                 <FormSectionCompany>
                     <TitleCompany>Registro para Empresas</TitleCompany>
                     <SubtitleCompany>
-                        Regístrate para acceder a tu <br/> cuenta en Alumni.
+                        Regístrate para acceder a tu <br/> cuenta en Alumni
                     </SubtitleCompany>
                     <FormCompany>
                         <StyledInputCompany 

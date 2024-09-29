@@ -18,7 +18,7 @@ const MainLP = () => {
         title="Coders"
         text="Acceso a Oportunidades de Empleo Comunidad y Colaboración  
         Visibilidad ante Empresas"
-        buttonText={<Button to="/registerCoder">Regístrate como Alumni</Button>}
+        buttonText={<Button to="/registerExCoder">Regístrate como Alumni</Button>}
         />
          <CardCoder
         title="Empresas"

@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LargeButton from '../../atom/LargeButton';
 import registerRP from '../../../assets/img/registerRP.jpg';
 import GlobalStyle from '../../../styled/GlobalStyle';
-import {RegisterContainer, FormSection, Title, Subtitle, Form, StyledInput, ButtonContainer, LinkContainer, StyledLink, ImageSection, StyledImage} from './styledRegisterRPComponents';
-
+import {RegisterContainer, DropdownContainer, FormSection, Title, Subtitle, Form, StyledInput, ButtonContainer, LinkContainer, StyledLink, ImageSection, StyledImage} from './styledRegisterRPComponents';
+import Dropdown from '../../atom/DropdownLargeButton';
 
 const RegisterRPComponent = () => {
+
+    const [selectedOptionSchool, setSelectedOptionSchool] = useState('');
+
+    const schoolOptions = ['Factoria F5 Barcelona', 'Factoria F5 Madrid', 'Factoria F5 Asturias'];
+
+    const handleSchoolSelect = (option) => {
+        setSelectedOptionSchool(option);
+    };
+
     return (
         <>
             <GlobalStyle />
@@ -40,6 +49,14 @@ const RegisterRPComponent = () => {
                             placeholder="Contraseña" 
                             aria-label="Insertar Contraseña"
                         />
+                        <DropdownContainer>
+                            <Dropdown 
+                                options={schoolOptions}
+                                onSelect={handleSchoolSelect}
+                                buttonText={selectedOptionSchool || "Escuela"}
+                                aria-label="Seleccionar opción de escuela"
+                            />
+                        </DropdownContainer>
 
                         <ButtonContainer>
                             <LargeButton 

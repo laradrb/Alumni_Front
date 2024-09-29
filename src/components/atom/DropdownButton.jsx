@@ -14,7 +14,7 @@ const DropdownButton = styled.button`
     box-shadow: none;
     flex-shrink: 0;
     transition: all 0.3s ease;
-    border-radius: 1.875rem 1.875rem ${({ isOpen }) => (isOpen ? '0 0' : '1.875rem 1.875rem')};
+    border-radius: 1.875rem 1.875rem ${({ $isOpen }) => ($isOpen ? '0 0' : '1.875rem 1.875rem')};
     background-color: #E9E9E6;
     font-size: 1.125rem;
     font-family: 'Poppins', sans-serif;
@@ -40,9 +40,9 @@ const DropdownList = styled.ul`
     padding: 0;
     list-style: none;
     overflow: hidden;
-    max-height: ${({ isOpen }) => (isOpen ? '15rem' : '0')};
-    transition: max-height 0.3s ease-in-out; /* Animación suave */
-    box-shadow: ${({ isOpen }) => (isOpen ? '0 0.25rem 0.5rem rgba(0, 0, 0, 0.1)' : 'none')};
+    max-height: ${({ $isOpen }) => ($isOpen ? '15rem' : '0')};
+    transition: max-height 0.3s ease-in-out;
+    box-shadow: ${({ $isOpen }) => ($isOpen ? '0 0.25rem 0.5rem rgba(0, 0, 0, 0.1)' : 'none')};
     border-radius: 0 0 1.875rem 1.875rem; 
 `;
 
@@ -91,13 +91,13 @@ const Dropdown = ({ options, onSelect, buttonText }) => {
 
     return (
         <DropdownContainer>
-            <DropdownButton onClick={toggleDropdown} isOpen={isOpen}>
+            <DropdownButton onClick={toggleDropdown} $isOpen={isOpen}>
                 {buttonText}
                 <ArrowIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M7 10l5 5 5-5H7z" />
                 </ArrowIcon>
             </DropdownButton>
-            <DropdownList isOpen={isOpen && !isClosing}>
+            <DropdownList $isOpen={isOpen && !isClosing}>
                 {options.map((option, index) => (
                     <DropdownItem key={index} onClick={() => handleSelect(option)}>
                         {option}

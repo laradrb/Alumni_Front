@@ -11,7 +11,7 @@ const PreRegisterForm = () => {
         </SubTitleWrapper>
         <ButtonWrapper>
           <ButtonLinkLg to="/registerRP">Responsable de Promoción</ButtonLinkLg>
-          <ButtonLinkLg to="/registerCoder">Coder/Ex-coder</ButtonLinkLg>
+          <ButtonLinkLg to="/registerExCoder">Coder/Ex-coder</ButtonLinkLg>
           <ButtonLinkLg to="/registerCompany">Empresa</ButtonLinkLg>
         </ButtonWrapper>
       </Container>

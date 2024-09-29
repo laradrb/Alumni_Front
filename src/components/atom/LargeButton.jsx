@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 
 const ButtonStyled = styled.button`
-    width: 32.813rem;
+    width: 31.041rem;
+    height: 3.222rem;
     padding: 1.2rem;
     background-color: #f74702;
     color: white;

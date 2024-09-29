@@ -4,6 +4,7 @@ import registerRP from '../../../assets/img/registerRP.jpg';
 import GlobalStyle from '../../../styled/GlobalStyle';
 import {RegisterContainer, FormSection, Title, Subtitle, Form, StyledInput, ButtonContainer, LinkContainer, StyledLink, ImageSection, StyledImage} from './styledRegisterRPComponents';
 
+
 const RegisterRPComponent = () => {
     return (
         <>

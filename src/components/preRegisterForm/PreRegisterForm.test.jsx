@@ -39,7 +39,7 @@ describe('PreRegisterForm component', () => {
 
     // Verificamos que cada botón tiene el enlace correcto
     expect(screen.getByText('Responsable de Promoción').closest('a')).toHaveAttribute('href', '/registerRP');
-    expect(screen.getByText('Coder/Ex-coder').closest('a')).toHaveAttribute('href', '/registerCoder');
+    expect(screen.getByText('Coder/Ex-coder').closest('a')).toHaveAttribute('href', '/registerExCoder');
     expect(screen.getByText('Empresa').closest('a')).toHaveAttribute('href', '/registerCompany');
   });
 

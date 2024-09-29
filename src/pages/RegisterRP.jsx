@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterRPComponent from "../components/register/registeRP/RegisterRPComponent";
+import RegisterRPComponent from "../components/register/registerRP/RegisterRPComponent";
 
 const RegisterRP = () => {
     return (

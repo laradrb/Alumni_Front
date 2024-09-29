@@ -72,9 +72,9 @@ const Dropdown = ({ options, onSelect, buttonText }) => {
         if (isOpen) {
             setIsClosing(true);
             setTimeout(() => {
-                setIsOpen(false); 
+                setIsOpen(false);
                 setIsClosing(false);
-            }, 300); 
+            }, 300);
         } else {
             setIsOpen(true);
         }
@@ -83,15 +83,15 @@ const Dropdown = ({ options, onSelect, buttonText }) => {
     const handleSelect = (option) => {
         setIsClosing(true);
         setTimeout(() => {
-            setIsOpen(false); 
+            setIsOpen(false);
             setIsClosing(false);
-            onSelect(option); 
-        }, 300); 
+            onSelect(option);
+        }, 300);
     };
 
     return (
         <DropdownContainer>
-            <DropdownButton onClick={toggleDropdown} $isOpen={isOpen}>
+            <DropdownButton onClick={toggleDropdown} $isOpen={isOpen} type="button">
                 {buttonText}
                 <ArrowIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M7 10l5 5 5-5H7z" />

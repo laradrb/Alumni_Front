@@ -18,7 +18,7 @@ const MainLP = () => {
         title="Coders"
         text="Acceso a Oportunidades de Empleo Comunidad y Colaboración  
         Visibilidad ante Empresas"
-        buttonText={<Button to="/alumni">Regístrate como Alumni</Button>}
+        buttonText={<Button to="/registerCoder">Regístrate como Alumni</Button>}
         />
          <CardCoder
         title="Empresas"
@@ -30,7 +30,7 @@ const MainLP = () => {
               Filtrado Eficiente de Perfiles
               </>
         }
-        buttonText={<Button to="/empresa">Regístrate como Empresa</Button>}
+        buttonText={<Button to="/registerCompany">Regístrate como Empresa</Button>}
         />
         </GeneralContainer>
     </div>

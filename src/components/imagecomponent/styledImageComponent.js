@@ -6,7 +6,7 @@ export const ParagraphContainer = styled.div`
     justify-content: center;
     width: 67.313rem;
     height: 28.125rem;
-    margin: 12.5rem auto;
+    margin: 6rem auto 2rem;;
 `;
 export const Paragraph = styled.p`
     font-size: 2rem;
@@ -22,7 +22,7 @@ export const CentralImage = styled.div`
     display: flex;
     overflow: hidden;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 2rem;
 `;
 export const StyledCentralImage = styled.img`
     width: 75rem;

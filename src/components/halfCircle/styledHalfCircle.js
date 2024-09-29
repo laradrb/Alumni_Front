@@ -15,7 +15,7 @@ export const ImageWrapper = styled.div`
   img {
     width: 19.875rem;
     height: 16.125rem;
-    margin-left: -8.5rem;
+    margin-left: -14rem;
   }
 `;
 
@@ -27,7 +27,7 @@ export const Container2 = styled.div`
   height: 19.375rem;
   flex-shrink: 0;
   margin-top: 4.75rem;
-  margin-left: -12.5rem;
+  margin-left: -17rem;
 `;
 
 export const Text = styled.p`

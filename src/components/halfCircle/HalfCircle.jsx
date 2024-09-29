@@ -1,5 +1,5 @@
 import React from "react";
-import orangeCircle from "../../assets/img/orangeCircle.jpg";
+import orangeCircle from "../../assets/img/geometric.png";
 import { Container, Text, Container2, ImageWrapper } from "./styledHalfCircle";
 
 const HalfCircle = () => {

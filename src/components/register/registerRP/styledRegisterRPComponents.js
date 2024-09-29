@@ -45,6 +45,12 @@ export const Form = styled.form`
     width: 100%; 
 `;
 
+export const DropdownContainer = styled.div`
+    display: flex;                                          
+    margin-bottom: 1.5rem; 
+    gap: 2rem;                         
+`;
+
 export const StyledInput = styled(Input)`
     margin-bottom: 1.5rem; 
     width: 100%; 

@@ -1,7 +1,7 @@
 import React from 'react';
-import LargeButton from '../atom/LargeButton';
-import registerEmpresa from '../../assets/img/registerEmpresa.jpg';
-import GlobalStyle from '../../styled/GlobalStyle';
+import LargeButton from '../../atom/LargeButton';
+import registerEmpresa from '../../../assets/img/registerEmpresa.jpg';
+import GlobalStyle from '../../../styled/GlobalStyle';
 import {RegisterContainerCompany, FormSectionCompany, TitleCompany, SubtitleCompany, FormCompany, StyledInputCompany, ButtonContainerCompany, LinkContainerCompany, StyledLinkCompany, ImageSectionCompany, StyledImageCompany} from './styledRegisterCompanyComponent';
 
 const RegisterCompanyComponent = () => {

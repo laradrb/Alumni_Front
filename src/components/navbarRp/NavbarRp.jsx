@@ -1,6 +1,6 @@
 import React from 'react';
 import LogoF5 from '../logo/Logo.jsx';
-import { Nav, NavLinks, StyledLink } from './styled-navbar-rp.jsx';
+import { Nav, NavLinks, StyledLink } from './styledNavbarRp.js';
 
 const NavbarRp = () => {
 return (

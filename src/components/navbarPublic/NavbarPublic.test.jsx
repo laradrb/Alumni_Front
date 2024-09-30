@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import NavbarPublic from './Navbar-public.jsx';
+import NavbarPublic from './NavbarPublic';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('NavbarPublic Component', () => {

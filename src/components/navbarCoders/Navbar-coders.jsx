@@ -12,7 +12,9 @@ return (
         <StyledLink to="/profile">PERFIL</StyledLink>
         <StyledLink to="/logout">CERRAR SESIÓN</StyledLink>
     </NavLinks>
+    <StyledLink to="/alumni">
     <LogoF5/>
+    </StyledLink>
     </Nav>
 );
 };

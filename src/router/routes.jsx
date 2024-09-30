@@ -41,6 +41,7 @@ export const router = createBrowserRouter([
                 path: "/registerExCoder",
                 element: <RegisterExCoder/>,
             }
+            
         ],
     },
 ]);

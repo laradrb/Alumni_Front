@@ -30,16 +30,15 @@ export const ImageSectionCoderProfile = styled.div`
 `;
 
 export const StyledImageCoderProfile = styled.img`
-    display: flex;
-    flex: column;
-    width: 11.5rem;
-    height: 12.875rem;
+    display: block;
+    width: 100%;
+    height: 100%;
     margin-left: 1.75rem;
     margin-right: 1.75rem;
     border: 1px solid #A6A6A6;
     border-radius: 1.875px;
     overflow: hidden;
-    
+    object-fit: cover;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 `;
 

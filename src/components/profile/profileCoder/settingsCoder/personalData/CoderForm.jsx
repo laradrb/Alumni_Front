@@ -4,11 +4,12 @@ import DropdownMediumButton from '../../../../atom/DropdownMediumButton';
 import TextareaAbout from '../../../../atom/TextareaAbout';
 import GlobalStyle from '../../../../../styled/GlobalStyle';
 import { ProfileCoderContainer, FormSectionCoderprofile, FormSectionProfile2, SectionWrapper, ImageSectionCoderProfile, StyledImageCoderProfile, StyledCoderProfile, StyledCoderProfile1, SectionButton,StyledCoderSectionDrowdowButton} from './styledCoderForm';
-import Pilar from '../../../../../assets/img/Pilar.jpg';
+
 
 const CoderForm = () => {
     const [cvFile, setCvFile] = useState(null);
-
+    const [profileImage, setProfileImage] = useState(null);
+    const [imagePreview, setImagePreview] = useState('');
     const [selectedOptionSchool, setSelectedOptionSchool] = useState('');
 
     const schoolOptions = ['Factoria F5 Barcelona', 'Factoria F5 Madrid', 'Factoria F5 Asturias'];
@@ -19,21 +20,32 @@ const CoderForm = () => {
     const handleCVUpload = (file) => {
         setCvFile(file);
         console.log('CV seleccionado:', file.name);
-        // Aquí puedes añadir lógica adicional para manejar el archivo
-        // Por ejemplo, subirlo a un servidor o procesarlo
     };
-
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        setProfileImage(file);
+        setImagePreview(URL.createObjectURL(file));
+    };
     return (
         <>
         <GlobalStyle/>
             <ProfileCoderContainer>
                 <SectionWrapper>
                     <ImageSectionCoderProfile>
-                        <StyledImageCoderProfile 
-                        src={Pilar}
-                        alt="Imagen de ex-coder" 
-                        aria-hidden="true" 
-                    />
+                    <label htmlFor="profile-image-upload" className="cursor-pointer">
+                            <StyledImageCoderProfile 
+                                src={imagePreview || 'default-profile.png'} 
+                                alt="Imagen de ex-coder" 
+                                aria-hidden="true"
+                            />
+                            <input
+                                id="profile-image-upload"
+                                type="file"
+                                accept="image/*"
+                                style={{ display: 'none' }}
+                                onChange={handleImageUpload}
+                            />
+                        </label>
                     </ImageSectionCoderProfile>
                     <SectionButton>
                     <CVButton onChange={handleCVUpload}>
@@ -51,16 +63,16 @@ const CoderForm = () => {
                             placeholder="Apellidos" 
                             aria-label="Insertar Apellidos" /> 
                         <StyledCoderProfile
-                            type="text" 
-                            placeholder="Email" 
-                            aria-label="Insertar Email" />
+                            type="email" 
+                            placeholder="Correo electrónico" 
+                            aria-label="Insertar Correo electrónico" />
                         <StyledCoderProfile
                             type="password" 
-                            placeholder="Password" 
+                            placeholder="Contraseña" 
                             aria-label="Insertar Contraseña" />
                         <StyledCoderProfile
                             type="password" 
-                            placeholder="Confirmar Password" 
+                            placeholder="Confirmar Contraseña" 
                             aria-label="Insertar Confirmar contraseña" />
                         <StyledCoderSectionDrowdowButton> 
                         <DropdownMediumButton 

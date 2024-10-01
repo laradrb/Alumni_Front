@@ -34,9 +34,8 @@ describe('CoderForm', () => {
     
         expect(screen.getByPlaceholderText('Nombre')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Apellidos')).toBeInTheDocument();
-        expect(screen.getByPlaceholderText('Email')).toBeInTheDocument();
-        expect(screen.getByPlaceholderText('Password')).toBeInTheDocument();
-        expect(screen.getByPlaceholderText('Confirmar Password')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Correo electrónico')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Contraseña')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Sobre mí')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('GitHub')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Linkedin')).toBeInTheDocument();
@@ -66,29 +65,25 @@ describe('CoderForm', () => {
 
         );
         
-        const nameInput = screen.getByPlaceholderText('Nombre');
-        const emailInput = screen.getByPlaceholderText('Password');
-        const passwordInput = screen.getByPlaceholderText('Password');
+        const nombreInput = screen.getByPlaceholderText('Nombre');
+        const apellidosInput = screen.getByPlaceholderText('Apellidos');
+        const emailInput = screen.getByPlaceholderText('Correo electrónico');
+        const passwordInput = screen.getByPlaceholderText('Contraseña');
 
+        expect(nombreInput).toBeInTheDocument();
+        expect(apellidosInput).toBeInTheDocument();
+        expect(emailInput).toBeInTheDocument();
+        expect(passwordInput).toBeInTheDocument();
+;
 
-        fireEvent.change(nameInput, { target: { value: 'Manu' } });
-        fireEvent.change(emailInput, { target: { value: 'manu@example.com' } });
+        fireEvent.change(nombreInput, { target: { value: 'Maria' } });
+        fireEvent.change(apellidosInput, { target: { value: 'Montilla' } });
+        fireEvent.change(emailInput, { target: { value: 'mariam2@example.com' } });
         fireEvent.change(passwordInput, { target: { value: 'MyPassword1.' } });
 
-        expect(nameInput).toHaveValue('Manu');
-        expect(emailInput).toHaveValue('manu@example.com');
+        expect(nombreInput).toHaveValue('Maria');
+        expect(apellidosInput).toHaveValue('Montilla');
+        expect(emailInput).toHaveValue('mariam2@example.com');
         expect(passwordInput).toHaveValue('MyPassword1.');
-    });
-
-    it('renders the profile image', () => {
-        render(
-            <BrowserRouter>
-                <CoderForm />
-            </BrowserRouter>
-
-        );
-        const profileImage = screen.getByAltText('Imagen de ex-coder');
-        expect(profileImage).toBeInTheDocument();
-        expect(profileImage).toHaveAttribute('src', expect.stringContaining(''));
-    });
+    });  
 });

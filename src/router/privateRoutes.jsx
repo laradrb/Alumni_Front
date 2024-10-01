@@ -4,80 +4,62 @@ import SettingsCompany from '../pages/SettingsCompany';
 import JobOffer from '../pages/JobOffer';
 import ProfileCoder from '../pages/ProfileCoder';
 import RpProfile from '../pages/RpProfile';
-import PrivateRoute from '../components/PrivateRoute';
+import CoderLayout from '../layout/CoderLayout';
+import RpLayout from '../layout/RpLayout';        
+import CompanyLayout from '../layout/CompanyLayout';
+import PrivateRoute from './PrivateRoute'; 
+
 
 
 export const privateRoutes = [
     {
-        path:"/empresa/perfil-empresa",
-        element: <privateRoute roles={['empresa']} component={CompanyProfile}/>,
+        path: "empresa/",
+        element: <PrivateRoute allowedRoles={['empresa']} />, 
+        children: [
+            {
+                path: "",
+                element: <CompanyLayout />, 
+                children: [
+                    { path: "perfil-empresa", 
+                    element: <CompanyProfile /> },
+                    { path: "ajuste-perfil", 
+                    element: <SettingsCompany /> },
+                    { path: "oferta", 
+                    element: <JobOffer /> },
+                ],
+            },
+        ],
     },
     {
-        path: "/empresa/ajuste-perfil",
-        element: <privateRoute roles={['empresa']} component={SettingsCompany} />,
+        path: "coder/",
+        element: <PrivateRoute allowedRoles={['coder']} />,
+        children: [
+            {
+                path: "",
+                element: <CoderLayout />, 
+                children: [
+                    { path: "", 
+                    element: <Alumni /> },
+                    { path: "perfil-coder", 
+                    element: <ProfileCoder /> },
+                ],
+            },
+        ],
     },
     {
-        path:"/empresa/ajuste-oferta",
-        element: <privateRoute roles={['empresa']} component={SettingsJobOffer}/>
+        path: "rp/",
+        element: <PrivateRoute allowedRoles={['rp']} />, 
+        children: [
+            {
+                path: "",
+                element: <RpLayout />, 
+                children: [
+                    { path: "", 
+                    element: <Alumni /> },
+                    { path: "", 
+                    element: <RpProfile /> },
+                ],
+            },
+        ],
     },
-    {
-        path:"/empresa/oferta",
-        element: <privateRoute roles={['empresa']} component={JobOffer}/>
-    },
-    {
-        path:"/empresa/aplicaciones-ofertas",
-        element: <privateRoute roles={['empresa']} component={CompanyOfferList}/>
-    },
-    {
-        path:"/empresa/aplicantes",
-        element: <privateRoute roles={['empresa']} component={OffersList}/>
-    },
-    {
-        path:"/empresa/perfil-coder",
-        element: <privateRoute roles={['empresa']} component={ProfileCoder}/>
-    },
-    {
-    path: "/coder/alumni",
-    element: <privateRoute roles={['coder']} component={Alumni} />,
-},
-{
-    path: "/coder/listado-coders",
-    element: <privateRoute roles={['coder']} component={CoderList} />,
-},
-{
-    path: "/coder/listado-ofertas",
-    element: <privateRoute roles={['coder']} component={JobOfferList} />,
-},
-{
-    path: "/coder/aplicar-oferta",
-    element: <privateRoute roles={['coder']} component={ApplicationToOffer} />,
-},
-{
-    path: "/coder/perfil-empresa",
-    element: <privateRoute roles={['coder']} component={CompanyProfile} />,
-},
-{
-    path: "/coder/perfil-coder",
-    element: <privateRoute roles={['coder']} component={ProfileCoder} />,
-},
-{
-    path: "/coder/ajustes-perfil",
-    element: <privateRoute roles={['coder']} component={SettingsCoder} />,
-},
-{
-    path: "/coder/formulario-certificado",
-    element: <privateRoute roles={['coder']} component={CertificateForm} />,
-},
-{
-    path: "/coder/alumni",
-    element: <privateRoute roles={['rp']} component={Alumni} />,
-},
-{
-    path: "/rp/perfil-rp",
-    element: <privateRoute roles={['rp']} component={RpProfile} />,
-},
-{
-    path: "/rp/ajustes-rp",
-    element: <privateRoute roles={['rp']} component={SettingsRP} />,
-},
 ];

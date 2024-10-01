@@ -9,7 +9,11 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
     ...publicRoutes,   
-    ...privateRoutes,  
     ],
 },
+{
+    path:"/",
+    children: [...privateRoutes],
+}
+
 ]);

@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../assets/logo/logo.svg";
-import { LogoImg } from "./styled-logo";
+import { LogoImg } from "./styledLogo";
 
 const LogoF5 = () => {
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import LogoF5 from '../logo/Logo.jsx';
-import { Nav, NavLinks, StyledLink } from './styled-navbar-coders.jsx';
+import { Link } from'react-router-dom';
+import { Nav, NavLinks, StyledLink } from './styledNavbarCoders.js';
 
 const NavbarCoders = () => {
 return (
@@ -12,7 +13,9 @@ return (
         <StyledLink to="/profile">PERFIL</StyledLink>
         <StyledLink to="/logout">CERRAR SESIÓN</StyledLink>
     </NavLinks>
+    <Link to="/alumni">
     <LogoF5/>
+    </Link>
     </Nav>
 );
 };

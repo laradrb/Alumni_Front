@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Input from '../atom/Input';
+import Input from '../../atom/Input';
 
 export const RegisterContainerCompany = styled.div`
     display: flex;

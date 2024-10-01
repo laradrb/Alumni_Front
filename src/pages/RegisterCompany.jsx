@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterCompanyComponent from "../components/registerCompany/RegisterCompanyComponent";
+import RegisterCompanyComponent from "../components/register/registerCompany/RegisterCompanyComponent";
 
 const RegisterCompany = () => {
     return (

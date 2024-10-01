@@ -7,6 +7,7 @@ import PreRegister from "../pages/PreRegister";
 import RegisterRP from "../pages/RegisterRP";
 import RegisterCompany from "../pages/RegisterCompany";
 import RegisterExCoder from "../pages/RegisterExCoder";
+import SettingsCoder from "../pages/SettingsCoder";
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
             {
                 path: "/registerExCoder",
                 element: <RegisterExCoder/>,
+            },
+            {
+                path: "/settingsCoder",
+                element: <SettingsCoder/>,
             }
             
         ],

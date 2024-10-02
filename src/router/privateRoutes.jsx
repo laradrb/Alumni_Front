@@ -16,7 +16,7 @@ import CoderList from '../pages/CoderList';
 import JobOfferList from '../pages/JobOfferList';
 import AplicationToOffer from '../pages/AplicationToOffer';
 import CertificateForm from '../pages/CertificateForm';
-
+import SettingsCoder from '../pages/SettingsCoder';
 
 
 
@@ -68,7 +68,7 @@ export const privateRoutes = [
                     { path: "perfil-coder", 
                     element: <ProfileCoder /> },
                     { path: "ajustes-perfil", 
-                    element: <SettingCoder /> },
+                    element: <SettingsCoder /> },
                     { path: "formulario-certificado", 
                     element: <CertificateForm /> },
                 ],

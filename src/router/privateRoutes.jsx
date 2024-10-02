@@ -19,7 +19,6 @@ import CertificateForm from '../pages/CertificateForm';
 import SettingsCoder from '../pages/SettingsCoder';
 
 
-
 export const privateRoutes = [
     {
         path: "empresa/",

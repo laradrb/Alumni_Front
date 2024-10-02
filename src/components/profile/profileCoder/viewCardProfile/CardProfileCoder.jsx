@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import SmallButton from '../../../atom/SmallButton'; 
+import CertificateButton from '../../../atom/CertificateButton';
 
 const Card = ({ name, subtitle, description }) => {
 return (
@@ -39,19 +41,20 @@ return (
             </SmallButton>
         </ButtonContainer>
         </CardContent>
+        <Link to="/settingsCoder">
+        <CertificateButton
+        type="button" 
+            aria-pressed="false" 
+            aria-label="Editar Perfil">
+            Editar Perfil
+        </CertificateButton>
+        </Link>
     </CardView>
     </CardContainer>
 );
 };
 
-const StyledSmallButton = styled(SmallButton)`
-width: 5.188rem;  
-height: 1.75rem;  
-font-size: 0.8125rem;  
-font-family: 'Poppins', sans-serif;
-font-weight: 500; 
 
-`;
 const CardContainer = styled.div`
     display: flex;
     widht:76.118rem;
@@ -64,13 +67,9 @@ const CardContainer = styled.div`
 
 
 const CardView = styled.div`
+position: relative;
 display: flex;
 align-items: flex-start;
-padding: 1.25rem;
-background-color: #fff;
-border: 0.0625rem solid #ccc;
-border-radius: 0.5rem;
-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 width: 74.0625rem;
 `;
 
@@ -87,6 +86,19 @@ img {
     margin-left: 1.75rem;
 }
 `;
+
+
+const CertificadButton = styled(SmallButton)`
+position: absolute;
+top: 0.625rem;   
+left: 0.625rem;  
+width: 6.9375rem;  
+height: 1.75rem;   
+margin-top: 13.4375rem; 
+margin-left: 71.6875rem;
+`;
+
+
 
 const CardContent = styled.div`
 display: flex;
@@ -113,30 +125,24 @@ gap: 0.625rem;
 margin-top: 0.9375rem;
 
 
-/*button {
-    flex: none;
-    padding: 0.625rem 1.25rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.875rem;
-}*/
 `;
 
-const h2 = styled.h2`
+const H2 = styled.h2`
 font-family: 'Poppins', sans-serif;
 font-weight: 500;
 font-size: 1.25rem;
 margin: 0; 
-
+margin-top: 14.8125rem; 
+margin-left: 24.6875rem;
 `;
 
-const h4 = styled.h4`
+const H4 = styled.h4`
 font-family: 'Poppins', sans-serif;
 font-weight: 400;
 font-size: 1.125rem;
 color: #666;
-margin: 0.3125rem 0 0 0; 
+margin-top: 17.25rem; 
+margin-left: 24.6875rem;
 `;
+
 export default Card;

@@ -1,19 +1,14 @@
 import React from "react";
-import { createBrowserRouter, Navigate } from "react-router-dom";
-import Layout from "../layout/Layout";
+import { Navigate } from "react-router-dom"; 
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import PreRegister from "../pages/PreRegister";
 import RegisterRP from "../pages/RegisterRP";
 import RegisterCompany from "../pages/RegisterCompany";
 import RegisterExCoder from "../pages/RegisterExCoder";
+import Alumni from "../pages/Alumni";
 
-
-export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
-        children: [
+export const publicRoutes = [
             {
                 path: "/", 
                 element: <Navigate to='/home'/>,
@@ -41,8 +36,11 @@ export const router = createBrowserRouter([
             {
                 path: "/registerExCoder",
                 element: <RegisterExCoder/>,
+            },
+            {
+                path: "/alumni",
+                element: <Alumni/>,
             }
+
+        ];
             
-        ],
-    },
-]);

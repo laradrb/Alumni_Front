@@ -4,6 +4,23 @@ import { LoginContainer, FormSection, ImageSection, StyledImage,Title, Subtitle,
 import GlobalStyle from '../../styled/GlobalStyle'
 
 const LoginComponent = () => {
+    /* logica login */
+
+    // si la authenticación es correcta, se redirige a la página correspondiente según el role del usuario
+    // get user 
+    // if (getUserRole() === 'admin') {
+    //     return <Redirect to="/admin" />;
+    // } else if (getUserRole() === 'teacher') {
+    //     return <Redirect to="/teacher" />;
+    // } else if (getUserRole() === 'student') {
+    //     return <Redirect to="/student" />;
+    // }
+
+    const handleSubmit = () => {
+        // aqui se recogen datos formulario y se hace peticion a backend
+        // si peticion exitosa, redireccionar a paginas diferentes según roles
+        
+    }
     return (
     <>
         <GlobalStyle />

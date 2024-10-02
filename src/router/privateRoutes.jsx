@@ -1,6 +1,8 @@
 import Alumni from '../pages/Alumni';
 import CompanyProfile from '../pages/CompanyProfile';
 import SettingsCompany from '../pages/SettingsCompany';
+import SettingsCoder from '../pages/SettingsCoder';
+import SettingsRP from '../pages/SettingsRP';
 import JobOffer from '../pages/JobOffer';
 import ProfileCoder from '../pages/ProfileCoder';
 import RpProfile from '../pages/RpProfile';
@@ -8,7 +10,6 @@ import CoderLayout from '../layout/CoderLayout';
 import RpLayout from '../layout/RpLayout';        
 import CompanyLayout from '../layout/CompanyLayout';
 import PrivateRoute from './PrivateRoute'; 
-import SettingsRP from '../pages/SettingsRP';
 import SettingsJobOffer from '../pages/SettingsJobOffer';
 import CompanyOfferList from '../pages/CompanyOfferList';
 import OffersList from '../pages/OffersList';
@@ -16,7 +17,7 @@ import CoderList from '../pages/CoderList';
 import JobOfferList from '../pages/JobOfferList';
 import AplicationToOffer from '../pages/AplicationToOffer';
 import CertificateForm from '../pages/CertificateForm';
-import SettingsCoder from '../pages/SettingsCoder';
+
 
 
 export const privateRoutes = [

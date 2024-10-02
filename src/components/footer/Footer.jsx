@@ -14,11 +14,11 @@ const Footer = () => {
                 <img src={Logo} alt="Factoria F5" /> 
             </LeftSection>
             <RightSection>
-                <a href="https://factoriaf5.org/aviso-legal/">Aviso legal</a>
-                <a href="https://factoriaf5.org/politica-de-privacidad/">Política de Privacidad</a>
-                <a href="https://factoriaf5.org/politica-de-cookies/">Política de Cookies</a>
-                <a href="https://factoriaf5.org/contacto/">Contacta</a>
-                <a href="https://factoriaf5.org/blog/">Blog</a>
+                <a href="https://factoriaf5.org/aviso-legal/" target="_blank" rel="noopener noreferrer">Aviso legal</a>
+                <a href="https://factoriaf5.org/politica-de-privacidad/" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>
+                <a href="https://factoriaf5.org/politica-de-cookies/" target="_blank" rel="noopener noreferrer">Política de Cookies</a>
+                <a href="https://factoriaf5.org/contacto/"target="_blank" rel="noopener noreferrer" >Contacta</a>
+                <a href="https://factoriaf5.org/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
             </RightSection>
             <IconContainer>
                 <a href="https://www.linkedin.com/school/factor%C3%ADaf5/posts/?feedView=all" target="_blank" rel="noopener noreferrer">

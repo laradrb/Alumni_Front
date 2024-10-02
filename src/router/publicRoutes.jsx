@@ -6,7 +6,7 @@ import PreRegister from "../pages/PreRegister";
 import RegisterRP from "../pages/RegisterRP";
 import RegisterCompany from "../pages/RegisterCompany";
 import RegisterExCoder from "../pages/RegisterExCoder";
-import Alumni from "../pages/Alumni";
+
 
 export const publicRoutes = [
             {
@@ -36,11 +36,7 @@ export const publicRoutes = [
             {
                 path: "/registerExCoder",
                 element: <RegisterExCoder/>,
-            },
-            {
-                path: "/alumni",
-                element: <Alumni/>,
             }
-
+        
         ];
             

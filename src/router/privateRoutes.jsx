@@ -68,7 +68,7 @@ export const privateRoutes = [
                     { path: "perfil-coder", 
                     element: <ProfileCoder /> },
                     { path: "ajustes-perfil", 
-                    element: <SettingsCoder /> },
+                    element: <SettingsCoder/> },
                     { path: "formulario-certificado", 
                     element: <CertificateForm /> },
                 ],

@@ -1,10 +1,12 @@
+import React from 'react';
+import CompaniesForm from '../components/profile/profileCompanies/settingsCompanies/CompaniesForm'
 
 const SettingsCompany = () => {
   return (
-    <div>
-      Settings company
-    </div>
+    <>
+      <CompaniesForm/>
+    </>
   )
 }
 
-export default SettingsCompany
+export default SettingsCompany;

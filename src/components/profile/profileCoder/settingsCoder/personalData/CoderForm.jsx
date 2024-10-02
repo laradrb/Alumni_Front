@@ -3,7 +3,7 @@ import CVButton from '../../../../atom/CVButton';
 import DropdownMediumButton from '../../../../atom/DropdownMediumButton';
 import TextareaAbout from '../../../../atom/TextareaAbout';
 import GlobalStyle from '../../../../../styled/GlobalStyle';
-import { ProfileCoderContainer, FormSectionCoderprofile, FormSectionProfile2, SectionWrapper, ImageSectionCoderProfile, StyledImageCoderProfile, StyledCoderProfile, StyledCoderProfile1, SectionButton,StyledCoderSectionDrowdowButton} from './styledCoderForm';
+import { ProfileCoderContainer, FormSectionCoderprofile, FormSectionProfile2, SectionWrapper, ImageSectionCoderProfile, StyledImageCoderProfile, StyledCoderProfile, StyledCoderProfile1, SectionButton, StyledCoderSectionDrowdowButton} from './styledCoderForm';
 
 
 const CoderForm = () => {

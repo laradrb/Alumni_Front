@@ -1,12 +1,12 @@
 import React from 'react';
 import RpForm from '../components/profile/profileRp/settingsRp/RpForm';
 
-const SettingsRp = () => {
-    return (
-        <>
-        <RpForm/>
-        </>
-    )
-};
+const SettingsRP = () => {
+return (
+    <>
+    <RpForm/>
+    </>
+)
+}
 
-export default SettingsRp;
+export default SettingsRP;

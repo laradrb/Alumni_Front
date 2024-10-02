@@ -6,7 +6,6 @@ import PreRegister from "../pages/PreRegister";
 import RegisterRP from "../pages/RegisterRP";
 import RegisterCompany from "../pages/RegisterCompany";
 import RegisterExCoder from "../pages/RegisterExCoder";
-import SettingsRp from "../pages/SettingsRp";
 
 export const publicRoutes = [
             {
@@ -36,9 +35,5 @@ export const publicRoutes = [
             {
                 path: "/registerExCoder",
                 element: <RegisterExCoder/>,
-            },
-            {
-                path: "/settingsRp",
-                element: <SettingsRp/>,
-            }
+            }           
         ];

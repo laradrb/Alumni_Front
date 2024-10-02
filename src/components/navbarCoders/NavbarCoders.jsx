@@ -1,23 +1,23 @@
 import React from 'react';
 import LogoF5 from '../logo/Logo.jsx';
-import { Nav, NavLinks, StyledLink } from './styled-navbar-rp.jsx';
+import { Link } from'react-router-dom';
+import { Nav, NavLinks, StyledLink } from './styledNavbarCoders.js';
 
-const NavbarRp = () => {
+const NavbarCoders = () => {
 return (
     <Nav>
     <NavLinks>
         <StyledLink to="/alumni">ALUMNI</StyledLink>
         <StyledLink to="/coders">CODERS</StyledLink>
-        <StyledLink to="/companies">EMPRESAS</StyledLink>
         <StyledLink to="/joboffers">OFERTAS</StyledLink>
         <StyledLink to="/profile">PERFIL</StyledLink>
         <StyledLink to="/logout">CERRAR SESIÓN</StyledLink>
     </NavLinks>
-    <StyledLink to="/alumni">
+    <Link to="/alumni">
     <LogoF5/>
-    </StyledLink>
+    </Link>
     </Nav>
 );
 };
 
-export default NavbarRp;
+export default NavbarCoders;

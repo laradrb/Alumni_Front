@@ -1,19 +1,33 @@
-import React from "react";
-import { Container, Container2, Text, Container3, Container4, InnerText} from "./styledSkillsForm";
+import React, { useState } from "react";
+import { Container2, Text, Container3, SkillContainer, SkillCheckbox, InnerText } from "./styledSkillsForm";
 
-const SkillsCard = () => {
-    return (
-    <Container>
-        <Container2>
-            <Text>Front-End</Text>
-                <Container3>
-                    <Container4>
-                        <InnerText>HTML</InnerText>
-                    </Container4>
-                </Container3>
-        </Container2>
-    </Container>
+const SkillsCard = ({ title, skills }) => {
+  const [selectedSkills, setSelectedSkills] = useState([]);
+
+  const handleSkillToggle = (skill) => {
+    setSelectedSkills((prevSelected) =>
+      prevSelected.includes(skill)
+        ? prevSelected.filter((s) => s !== skill)
+        : [...prevSelected, skill]
     );
+  };
+
+  return (
+      <Container2>
+        <Text>{title}</Text>
+        <Container3>
+          {skills.map((skill) => (
+            <SkillContainer key={skill}>
+              <SkillCheckbox
+                isSelected={selectedSkills.includes(skill)}
+                onClick={() => handleSkillToggle(skill)}
+              />
+              <InnerText>{skill}</InnerText>
+            </SkillContainer>
+          ))}
+        </Container3>
+      </Container2>
+  );
 };
 
 export default SkillsCard;

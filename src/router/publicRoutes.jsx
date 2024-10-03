@@ -8,6 +8,7 @@ import RegisterCompany from "../pages/RegisterCompany";
 import RegisterExCoder from "../pages/RegisterExCoder";
 import SettingsCompany from "../pages/SettingsCompany"
 
+
 export const publicRoutes = [
             {
                 path: "/", 
@@ -42,3 +43,4 @@ export const publicRoutes = [
                 element: <SettingsCompany/>,
             }
         ];
+            

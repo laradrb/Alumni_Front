@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SmallButton from '../../../atom/SmallButton'; 
 import CertificateButton from '../../../atom/CertificateButton';
-import { CardContainer, CardView, ImageContainer, CertificadButton, CardContent, AboutMe, ButtonContainer, NameCoder, Promotion } from './styledCardProfileCoder';
+import { CardContainer, CardView, ImageContainer, EditButton, CardContent, AboutMe, ButtonContainer, NameCoder, Promotion } from './styledCardProfileCoder';
 
 const Card = ({ name, subtitle, description }) => {
 return (

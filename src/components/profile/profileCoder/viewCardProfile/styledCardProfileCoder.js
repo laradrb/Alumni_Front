@@ -36,7 +36,7 @@ img {
 `;
 
 
-export const CertificadButton = styled(CertificadButton)`
+export const EditButton = styled(CertificateButton)`
 position: absolute;
 top: 0.625rem;   
 left: 0.625rem;  

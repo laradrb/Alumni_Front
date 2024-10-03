@@ -1,9 +1,10 @@
 import React from 'react'
+import DataFormOffer from '../components/profile/profileCompanies/dataFormOffer/settingsFormOffer/DataFormOffer'
 
 const SettingsJobOffer = () => {
   return (
     <div>
-      hola SettingsJobOffer
+      <DataFormOffer/>
     </div>
   )
 }

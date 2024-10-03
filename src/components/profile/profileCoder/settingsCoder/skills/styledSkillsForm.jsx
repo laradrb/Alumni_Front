@@ -9,7 +9,6 @@ export const AppContainer = styled.div`
 `;
   
 export const Container = styled.div`
-  border: 2px solid #020100;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;

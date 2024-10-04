@@ -2,7 +2,6 @@ import Alumni from '../pages/Alumni';
 import CompanyProfile from '../pages/CompanyProfile';
 import SettingsCompany from '../pages/SettingsCompany';
 import SettingsCoder from '../pages/SettingsCoder';
-import SettingsRP from '../pages/SettingsRP';
 import JobOffer from '../pages/JobOffer';
 import ProfileCoder from '../pages/ProfileCoder';
 import RpProfile from '../pages/RpProfile';
@@ -87,8 +86,6 @@ export const privateRoutes = [
                     element: <Alumni /> },
                     { path: "perfil-rp", 
                     element: <RpProfile /> },
-                    { path: "ajustes-rp", 
-                    element: <SettingsRP /> },
                 ],
             },
         ],

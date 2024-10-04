@@ -6,7 +6,9 @@ import PreRegister from "../pages/PreRegister";
 import RegisterRP from "../pages/RegisterRP";
 import RegisterCompany from "../pages/RegisterCompany";
 import RegisterExCoder from "../pages/RegisterExCoder";
-import SettingsCompany from "../pages/SettingsCompany"
+import SettingsCompany from "../pages/SettingsCompany";
+import CardViewRp from "../components/profile/profileRp/CardViewRp/CardViewRp";
+import SettingsRp from '../pages/SettingsRP'; 
 
 
 export const publicRoutes = [
@@ -41,6 +43,20 @@ export const publicRoutes = [
             {
                 path: "/settingsCompany",
                 element: <SettingsCompany/>,
+            },
+            {
+                path: "/",
+                element: <SettingsCompany/>,
+            },
+            {
+                path: "/card",
+                element: <CardViewRp/>,
+            },
+            {
+                path: "/settingsRp",
+                element: <SettingsRp/>,
             }
+            
+            
         ];
             

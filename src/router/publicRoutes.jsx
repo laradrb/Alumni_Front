@@ -6,7 +6,6 @@ import PreRegister from "../pages/PreRegister";
 import RegisterRP from "../pages/RegisterRP";
 import RegisterCompany from "../pages/RegisterCompany";
 import RegisterExCoder from "../pages/RegisterExCoder";
-import ProfileView from "../components/profile/profileCoder/viewCardSkills/ProfileView";
 
 export const publicRoutes = [
             {
@@ -36,9 +35,6 @@ export const publicRoutes = [
             {
                 path: "/registerExCoder",
                 element: <RegisterExCoder/>,
-            },
-            {
-                path: "hola",
-                element: <ProfileView/>,
             }
         ];
+            

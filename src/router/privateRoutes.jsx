@@ -8,7 +8,7 @@ import RpProfile from '../pages/RpProfile';
 import CoderLayout from '../layout/CoderLayout';
 import RpLayout from '../layout/RpLayout';        
 import CompanyLayout from '../layout/CompanyLayout';
-import PrivateRoute from './PrivateRoute'; 
+import PrivateRouteLogic from './PrivateRouteLogic';
 import SettingsJobOffer from '../pages/SettingsJobOffer';
 import CompanyOfferList from '../pages/CompanyOfferList';
 import OffersList from '../pages/OffersList';
@@ -22,7 +22,7 @@ import CertificateForm from '../pages/CertificateForm';
 export const privateRoutes = [
     {
         path: "empresa/",
-        element: <PrivateRoute allowedRoles={['empresa']} />, 
+        element: <PrivateRouteLogic allowedRoles={['empresa']} />, 
         children: [
             {
                 path: "",
@@ -48,7 +48,7 @@ export const privateRoutes = [
     },
     {
         path: "coder/",
-        element: <PrivateRoute allowedRoles={['coder']} />,
+        element: <PrivateRouteLogic allowedRoles={['coder']} />,
         children: [
             {
                 path: "",
@@ -76,7 +76,7 @@ export const privateRoutes = [
     },
     {
         path: "rp/",
-        element: <PrivateRoute allowedRoles={['rp']} />, 
+        element: <PrivateRouteLogic allowedRoles={['rp']} />, 
         children: [
             {
                 path: "",

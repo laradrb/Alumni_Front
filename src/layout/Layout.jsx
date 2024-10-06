@@ -12,7 +12,6 @@ const Layout = () => {
                 <Outlet />  
             </main>
             <Footer />
-            <ApplicationToOffer /> 
         </>
     );
 }

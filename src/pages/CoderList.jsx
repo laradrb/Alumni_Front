@@ -1,10 +1,11 @@
-import React from 'react'
+import ViewListCoder from "../components/profile/profileCoder/viewListCoder/ViewListCoder";
+
 
 const CoderList = () => {
 return (
-    <div>
-    listado de coders
-    </div>
+    <>
+        <ViewListCoder />
+    </>
 )
 }
 

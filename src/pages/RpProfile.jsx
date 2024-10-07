@@ -2,7 +2,7 @@
 const RpProfile = () => {
   return (
     <div>
-       Rp profile
+      Rp profile
     </div>
   )
 }

@@ -120,13 +120,15 @@ export const SectionButtonRp = styled.div`
     display: flex;
     width: 35.219rem;
     height: 9.5rem;
-    margin-botom: -3rem;
+    margin-top: -53rem;
+    margin-left: -20rem;
 `;
 
 export const SectionButtonRp2 = styled.div`
     display: flex;
     width: 35.219rem;
     height: 9.5rem;
-    margin-top: 9rem;
+    margin-top: -44.625rem;
+    margin-left: -12rem;
 `;
 

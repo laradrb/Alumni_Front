@@ -36,5 +36,5 @@ export const publicRoutes = [
                 path: "/registerExCoder",
                 element: <RegisterExCoder/>,
             }
-        ];
+       ];
             

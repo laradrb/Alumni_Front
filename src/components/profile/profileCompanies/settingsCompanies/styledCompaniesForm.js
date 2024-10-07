@@ -113,5 +113,8 @@ export const SectionButton = styled.div`
     display: flex;
     width: 35.219rem;
     height: 9.5rem;
-    margin-top: 5.063rem;
+    margin-top: -48rem;
+    margin-bottom: 10rem;
+    margin-left: -19.31rem;
+    margin-right: 20rem;
 `;

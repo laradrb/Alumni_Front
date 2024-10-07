@@ -18,7 +18,6 @@ const ButtonStyled = styled.button`
     line-height: normal;
     margin-bottom: 4.75rem;
     margin-left: 19.31rem;
-    margin-top: 53rem;
     cursor: pointer;
     transition: background-color 0.3s;
     

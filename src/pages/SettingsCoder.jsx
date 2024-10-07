@@ -1,12 +1,10 @@
 import React from 'react';
-import CoderForm from '../components/profile/profileCoder/settingsCoder/personalData/CoderForm';
-import SettingsButtons from '../components/profile/profileCoder/settingsCoder/saveAndDeleteButtons/settingsButtons';
+import MainSettingsCoder from '../components/profile/profileCoder/settingsCoder/allSettings/AllSettings';
 
 const SettingsCoder = () => {
     return (
         <>
-        <CoderForm/>
-        <SettingsButtons/>
+        <MainSettingsCoder/>
         </>
     )
 };

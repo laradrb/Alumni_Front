@@ -3,11 +3,8 @@ import styled from "styled-components";
 
 export const ProfileCoderContainer = styled.div`
     display: flex;
-    width:76.118rem;
+    width: 76.118rem;
     height: 26.188rem;
-    margin-top: 4.813rem;
-    margin-left: 6.969rem;
-    margin-right: 6.969rem;
     border-radius: 1.24rem;
 `;
 

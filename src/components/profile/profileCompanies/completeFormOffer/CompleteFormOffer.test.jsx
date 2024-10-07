@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import CompleteFormOffer from './CompleteForm';
+import CompleteFormOffer from './completeForm';
 
 describe('CompleteFormOffer Component', () => {
   it('renders the form title correctly', () => {

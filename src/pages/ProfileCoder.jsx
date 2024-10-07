@@ -1,10 +1,10 @@
 import React from 'react';
-import  CardProfileCoder from "./../components/profile/profileCoder/viewCardProfile/CardProfileCoder"
+import ProfileView from '../components/profile/profileCoder/viewCardSkills/ProfileView';
 
 const ProfileCoder = () => {
     return (
         <>
-        <CardProfileCoder />
+        <ProfileView/>
         </>
     )
 };

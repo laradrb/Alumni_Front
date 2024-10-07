@@ -1,4 +1,4 @@
-import { GeneralContainerCoder,FilterTitle,SidebarFilter,FilterItem,FilterList,CoderCard,CoderName,CoderDetails,CoderImage,CoderInfo,CoderRole, TittleCoder } from "./StyledCardListCoder";
+import { CoderCard,CoderName,CoderDetails,CoderImage,CoderInfo,CoderRole } from "./StyledCardListCoder";
 
 
 const CardListCoder = ({name,location,gender,image}) => {

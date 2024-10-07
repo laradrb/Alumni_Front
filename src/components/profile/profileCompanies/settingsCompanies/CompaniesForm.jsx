@@ -1,20 +1,66 @@
 import React, { useState } from 'react';
-import SmallButton from '../../../atom/SmallButton'
+import axios from 'axios';
+import SaveButton from '../../../atom/SaveButton';
 import TextareaAbout from '../../../atom/TextareaAbout';
 import GlobalStyle from '../../../../styled/GlobalStyle';
-import { ProfileCompaniesTitle, ProfileCompaniesContainer, SectionWrapper,ImageSectionLogoProfile, StyledImageCompaniesProfile, FormSectionCompaniesprofile, StyledCompaniesProfile,StyledCompaniesProfile1, FormSectionProfile1}  from './styledCompaniesForm';
-import { SectionButton } from './styledCompaniesForm';
-
+import { ProfileCompaniesTitle, ProfileCompaniesContainer, SectionButton, SectionWrapper, ImageSectionLogoProfile, StyledImageCompaniesProfile, FormSectionCompaniesprofile, StyledCompaniesProfile, StyledCompaniesProfile1, FormSectionProfile1 } from './styledCompaniesForm';
 
 const CompaniesForm = () => {
     const [profileImage, setProfileImage] = useState(null);
     const [imagePreview, setImagePreview] = useState('');
+    const [formData, setFormData] = useState({
+        companyName: '',
+        nif: '',
+        email: '',
+        password: '',
+        website: '',
+        phone: '',
+        aboutUs: ''
+    });
 
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
         setProfileImage(file);
         setImagePreview(URL.createObjectURL(file));
     };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async () => {
+        try {
+            const formDataToSend = new FormData();
+            Object.keys(formData).forEach(key => {
+                formDataToSend.append(key, formData[key]);
+            });
+            if (profileImage) {
+                formDataToSend.append('profileImage', profileImage);
+            }
+
+            const response = await axios.post('YOUR_BACKEND_API_URL', formDataToSend, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            console.log('Form submitted successfully:', response.data);
+            // Handle success (e.g., show a success message, redirect, etc.)
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            // Handle error (e.g., show an error message)
+        }
+    };
+
+    const handleDeleteAccount = () => {
+        // Implement delete account logic here
+        console.log('Delete account functionality to be implemented');
+    };
+
     return (
         <>
         <GlobalStyle/>
@@ -40,55 +86,81 @@ const CompaniesForm = () => {
                         </label>
                     </ImageSectionLogoProfile>   
                 </SectionWrapper>    
-                    <FormSectionCompaniesprofile>
-                        <StyledCompaniesProfile
-                            type="text" 
-                            placeholder="Nombre Empresa/Razón social" 
-                            aria-label="Insertar Nombre de la Empresa o Razón social" />
-                        <StyledCompaniesProfile
-                            type="text" 
-                            placeholder="N.I.F" 
-                            aria-label="Insertar NIF" /> 
-                        <StyledCompaniesProfile
-                            type="email" 
-                            placeholder="Correo electrónico" 
-                            aria-label="Insertar Correo electrónico" />
-                        <StyledCompaniesProfile
-                            type="password" 
-                            placeholder="Contraseña" 
-                            aria-label="Insertar Contraseña" />
-                        <SectionButton>
-                            <SmallButton type="submit" 
-                                aria-pressed="false" 
-                                aria-label="Borrar cuenta"
-                            >
-                            Borrar cuenta
-                            </SmallButton>
-                    </SectionButton>     
-                    </FormSectionCompaniesprofile>                 
-                    <FormSectionProfile1> 
-                        <StyledCompaniesProfile1
-                            type="url"  
-                            placeholder="Sitio Web" 
-                            aria-label="Insertar url Web" />  
-                        <StyledCompaniesProfile1
-                            type="text"  
-                            placeholder="Teléfono" 
-                            aria-label="Insertar número de teléfono" />      
-                        <TextareaAbout
-                            type="textarea"
-                            placeholder="Sobre nosotros" 
-                            aria-label="Insertar sobre nosotros" /> 
+                <FormSectionCompaniesprofile>
+                    <StyledCompaniesProfile
+                        type="text"
+                        name="companyName"
+                        placeholder="Nombre Empresa/Razón social" 
+                        aria-label="Insertar Nombre de la Empresa o Razón social" 
+                        onChange={handleInputChange}
+                        value={formData.companyName}
+                    />
+                    <StyledCompaniesProfile
+                        type="text"
+                        name="nif"
+                        placeholder="N.I.F" 
+                        aria-label="Insertar NIF"
+                        onChange={handleInputChange}
+                        value={formData.nif} 
+                    /> 
+                    <StyledCompaniesProfile
+                        type="email"
+                        name="email"
+                        placeholder="Correo electrónico" 
+                        aria-label="Insertar Correo electrónico" 
+                        onChange={handleInputChange}
+                        value={formData.email}
+                    />
+                    <StyledCompaniesProfile
+                        type="password"
+                        name="password"
+                        placeholder="Contraseña" 
+                        aria-label="Insertar Contraseña"
+                        onChange={handleInputChange}
+                        value={formData.password}
+                    />
                     <SectionButton>
-                        <SmallButton
-                            type="submit" 
-                            aria-pressed="false" 
+                        <SaveButton
+                            type="button"
+                            aria-label="Borrar cuenta"
+                            text="Borrar cuenta"
+                            onClick={handleDeleteAccount}
+                        />
+                    </SectionButton>     
+                </FormSectionCompaniesprofile>                 
+                <FormSectionProfile1> 
+                    <StyledCompaniesProfile1
+                        type="url"
+                        name="website"
+                        placeholder="Sitio Web" 
+                        aria-label="Insertar url Web" 
+                        onChange={handleInputChange}
+                        value={formData.website}
+                    />  
+                    <StyledCompaniesProfile1
+                        type="text"
+                        name="phone"
+                        placeholder="Teléfono" 
+                        aria-label="Insertar número de teléfono"
+                        onChange={handleInputChange}
+                        value={formData.phone}
+                    />      
+                    <TextareaAbout
+                        name="aboutUs"
+                        placeholder="Sobre nosotros" 
+                        aria-label="Insertar sobre nosotros"
+                        onChange={handleInputChange}
+                        value={formData.aboutUs}
+                    /> 
+                    <SectionButton>
+                        <SaveButton
+                            type="button"
                             aria-label="Guardar cambios"
-                            >
-                            Guardar cambios
-                        </SmallButton>
+                            text="Guardar cambios"
+                            onClick={handleSubmit}
+                        />
                     </SectionButton>             
-                    </FormSectionProfile1>
+                </FormSectionProfile1>
             </ProfileCompaniesContainer> 
         </>      
     );

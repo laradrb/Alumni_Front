@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardContainer, CardTitle, Text } from './styleCard'; // Asegúrate de que estos estilos estén en un archivo 'StyledComponents.jsx'
+import { CardContainer, CardTitle, Text } from './styleCard';
 
 const CardCoder = ({title, text, buttonText}) => {
   return (

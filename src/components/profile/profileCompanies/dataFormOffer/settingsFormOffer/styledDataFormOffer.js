@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const DataFormOfferContainer = styled.div`
     width: 74.063rem;
     height: 79.25rem;
-    margin-top: 7.748rem;
+    margin-top: 1.06rem;
     margin-right: 8rem;
     margin-left: 8rem;
     margin-bottom: 7.75rem;

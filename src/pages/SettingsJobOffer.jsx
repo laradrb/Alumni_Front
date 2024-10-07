@@ -1,10 +1,10 @@
 import React from 'react'
-import DataFormOffer from '../components/profile/profileCompanies/dataFormOffer/settingsFormOffer/DataFormOffer'
+import CompleteFormOffer from '../components/profile/profileCompanies/completeFormOffer/completeForm';
 
 const SettingsJobOffer = () => {
   return (
     <div>
-      <DataFormOffer/>
+      <CompleteFormOffer/>
     </div>
   )
 }

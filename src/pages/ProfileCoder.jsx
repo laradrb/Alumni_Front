@@ -4,7 +4,11 @@ import ProfileView from '../components/profile/profileCoder/viewCardSkills/Profi
 const ProfileCoder = () => {
     return (
         <>
+
+      
+
         <ProfileView/>
+
         </>
     )
 };

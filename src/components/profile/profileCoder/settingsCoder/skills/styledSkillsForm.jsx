@@ -4,7 +4,6 @@ export const AppContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 37rem;
   margin-bottom: 12rem;
 `;
   

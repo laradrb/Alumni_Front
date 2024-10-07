@@ -1,10 +1,10 @@
 import React from 'react';
-import CompleteSkillsForm from '../components/profile/profileCoder/settingsCoder/completeSkills/CompleteSkillsForm';
+import MainSettingsCoder from '../components/profile/profileCoder/settingsCoder/allSettings/AllSettings';
 
 const SettingsCoder = () => {
     return (
         <>
-<CompleteSkillsForm />
+        <MainSettingsCoder/>
         </>
     )
 };

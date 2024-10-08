@@ -7,10 +7,9 @@ flex-direction: row-reverse;
 justify-content: space-between;
 align-items: center;
 padding: 0 2.5rem;
-height: 5.625rem;
+height: 7.3125rem;;
 background-color: #FFF;
 box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
-margin: 1.25rem;
 `;
 
 export const NavLinks = styled.div`

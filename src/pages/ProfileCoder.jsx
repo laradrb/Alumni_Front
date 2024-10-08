@@ -1,5 +1,5 @@
 import React from 'react';
-import MainProfileCoder from "../components/profile/profileCoder/viewProfileCoder/MainProfileCoder"
+import MainProfileCoder from "../components/profile/profileCoder/viewProfileCoder/mainProfileCoder"
 
 
 const ProfileCoder = () => {

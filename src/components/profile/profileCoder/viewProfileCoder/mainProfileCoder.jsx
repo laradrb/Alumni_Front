@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileView from '../viewCardSkills/ProfileView';
 import CertificateCard from '../viewCardCertificates/CertificateCard';
 import CardProfileCoder from '../viewCardProfile/CardProfileCoder';
-import { MainContainer, SubContainer, SkillsSection, CertificationsSection, VerticalLine } from './styledMainProfileCoder';
+import { MainContainer, SubContainer, SkillsSection, CertificationsSection, VerticalLine } from './styledmainProfileCoder';
 import HorizontalLine from '../../../../assets/img/horizontalLine.png';
 
 const MainProfileCoder = () => {

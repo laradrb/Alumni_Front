@@ -61,7 +61,7 @@ export const FormSectionCompaniesprofile = styled.div`
 
 export const StyledCompaniesProfile = styled.input`
     width: 25rem;
-    height: 2.063rem;
+    height: 2.263rem;
     border: 0.063rem solid #e9e9e6;
     box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
@@ -89,7 +89,7 @@ export const FormSectionProfile1 = styled.div`
 
 export const StyledCompaniesProfile1 = styled.input`
     width: 25rem;
-    height: 2.063rem;
+    height: 2.263rem;
     border: 0.063rem solid #e9e9e6;
     box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
@@ -109,12 +109,26 @@ export const StyledCompaniesProfile1 = styled.input`
     margin-right: 2.625rem;
 `;
 
+export const SectionButton1 = styled.div`
+    display: flex;
+    width: 35.219rem;
+    height: 9.5rem;
+    margin-top: 5rem;
+    margin-left: -23rem;
+
+`;
 export const SectionButton = styled.div`
     display: flex;
     width: 35.219rem;
     height: 9.5rem;
-    margin-top: -48rem;
-    margin-bottom: 10rem;
-    margin-left: -19.31rem;
-    margin-right: 20rem;
+    margin-top: 5rem;
+    margin-left: -15rem;
+`;
+
+export const PopoverWrapperCompany = styled.div`
+    position: fixed;
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 `;

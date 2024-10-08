@@ -17,7 +17,7 @@ export const ProfileRpContainer = styled.div`
     width:70.438rem;
     height: 30.975rem;
     margin-left: 9.781rem;
-    margin-right:9.781em;
+    margin-right: 9.781rem;
     border-radius: 1.24rem;
     border: solid #f74702;
     margin-bottom: 7.936rem;
@@ -54,15 +54,17 @@ export const StyledImageRpProfile = styled.img`
 
 
 export const FormSectionRpProfile = styled.div`
+    display: flex;
+    flex-direction: column;
     flex: 1;
     width: 27.589rem;
-    height: 14.063rem;
+    height: auto;
     margin-top: 4.125rem;
 `;
 
 export const StyledRpProfile = styled.input`
     width: 25rem;
-    height: 2.063rem;
+    height: 2.226rem;
     border: 0.063rem solid #e9e9e6;
     box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
@@ -76,8 +78,9 @@ export const StyledRpProfile = styled.input`
     color: #020100;
     &:focus {
         outline: none;
-        box-shadow: 0 -0.375rem 0.625rem -0.063remrgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
+        box-shadow: 0 -0.375rem 0.625rem -0.063rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
     }
+
     margin-bottom: 1.649rem;
 `;
 export const StyledRpSectionDrowdowButton = styled.div`
@@ -87,16 +90,18 @@ export const StyledRpSectionDrowdowButton = styled.div`
 `;
 
 export const FormSectionRpProfile1 = styled.div`
+    display: flex;
+    flex-direction: column;
     flex: 1;
     width: 27.589rem;
-    height: 14.063rem;
+    height: auto;
     margin-top: 4.125rem;
-    margin-left: -1rem;
+
 `;
 
 export const StyledRpProfile1 = styled.input`
     width: 25rem;
-    height: 2.063rem;
+    height: 2.226rem !important;
     border: 0.063rem solid #e9e9e6;
     box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
@@ -104,31 +109,41 @@ export const StyledRpProfile1 = styled.input`
     background-color: #e9e9e6;
     font-size: 1.125rem;
     font-family: 'Poppins', sans-serif;
-    padding: 0 0 0 1rem; 
+    padding: 1rem; 
     resize: none; 
     vertical-align: top;
     color: #020100;
+    box-sizing: border-box;
     &:focus {
         outline: none;
-        box-shadow: 0 -0.375rem 0.625rem -0.063remrgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
+        box-shadow: 0 -0.375rem 0.625rem -0.063rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.06);
     }
-    margin-bottom: 1.749rem;
     margin-right: 2.825rem;
+    margin-bottom: 1.669rem;
 `;
 
 export const SectionButtonRp = styled.div`
     display: flex;
     width: 35.219rem;
     height: 9.5rem;
-    margin-top: -53rem;
-    margin-left: -20rem;
+    justify-content: flex-end;
+    margin-left: -22rem;
+    margin-bottom: -4rem;
 `;
 
 export const SectionButtonRp2 = styled.div`
     display: flex;
-    width: 35.219rem;
-    height: 9.5rem;
-    margin-top: -44.625rem;
-    margin-left: -12rem;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 9.325rem;
+    margin-left: -10rem;
+`;
+
+export const PopoverWrapper = styled.div`
+    position: fixed;
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 `;
 

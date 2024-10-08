@@ -1,40 +1,53 @@
 import React from 'react';
 import SmallButton from '../../../atom/SmallButton';
 import CertificateButton from '../../../atom/CertificateButton';
-import styles from './styledCertificateCard';
+import {
+  MainContainer,
+  HeaderContainer,
+  HeaderTitle,
+  CardContainer,
+  ContentContainer,
+  Image,
+  TextContainer,
+  Title,
+  School,
+  Dates,
+  ButtonContainer
+} from './styledCertificateCard'; 
 
 const CertificateCard = ({ titulo, escuela, fechaInicio, fechaFin, imageUrl }) => {
   return (
-    <div style={styles.mainContainer}>
+    <MainContainer>
       {/* Title Section */}
-      <div style={styles.headerContainer}>
-        <h2 style={styles.headerTitle}>Certificaciones</h2>
+      <HeaderContainer>
+        <HeaderTitle>Certificaciones</HeaderTitle>
         <CertificateButton onClick={() => window.location.href = '/agregar-certificado'}>
           Añadir Certificado
         </CertificateButton>
-      </div>
+      </HeaderContainer>
 
       {/* Card Section */}
-      <div style={styles.cardContainer}>
-        <div style={styles.contentContainer}>
-          <img src={imageUrl} alt="Certificado" style={styles.image} />
-          <div style={styles.textContainer}>
-            <div style={styles.title}>{titulo}</div>
-            <div style={styles.school}>{escuela}</div>
-            <div style={styles.dates}>{`${fechaInicio} - ${fechaFin}`}</div>
-          </div>
-        </div>
-        <div style={styles.buttonContainer}>
+      <CardContainer>
+        <ContentContainer>
+          <Image src={imageUrl} alt="Certificado" />
+          <TextContainer>
+            <Title>{titulo}</Title>
+            <School>{escuela}</School>
+            <Dates>{`${fechaInicio} - ${fechaFin}`}</Dates>
+          </TextContainer>
+        </ContentContainer>
+        <ButtonContainer>
           <SmallButton onClick={() => window.location.href = '/editar-certificado'}>
             Editar
           </SmallButton>
-        </div>
-      </div>
-    </div>
+        </ButtonContainer>
+      </CardContainer>
+    </MainContainer>
   );
 };
 
 export default CertificateCard;
+
 
 
 

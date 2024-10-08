@@ -3,7 +3,8 @@ import SaveButton from '../../../atom/SaveButton'
 import axios from 'axios';
 import DropdownMediumButton from '../../../atom/DropdownMediumButton'
 import GlobalStyle from '../../../../styled/GlobalStyle';
-import { ProfileRpTitle, ProfileRpContainer, SectionWrapper, ImageSectionRpProfile, StyledImageRpProfile, FormSectionRpProfile, StyledRpProfile, StyledRpSectionDrowdowButton, SectionButtonRp, FormSectionRpProfile1, StyledRpProfile1, SectionButtonRp2 } from './styledRpForm'
+import { ProfileRpTitle, ProfileRpContainer, SectionWrapper, ImageSectionRpProfile, StyledImageRpProfile, FormSectionRpProfile, StyledRpProfile, StyledRpSectionDrowdowButton, SectionButtonRp, FormSectionRpProfile1, StyledRpProfile1, SectionButtonRp2, PopoverWrapper } from './styledRpForm'
+import CardPopover from '../../../cardPopover/CardPopover';
 
 const RpForm = () => {
     const [profileImage, setProfileImage] = useState(null);
@@ -16,6 +17,7 @@ const RpForm = () => {
         password: '',
         confirmPassword: ''
     });
+    const [showDeletePopover, setShowDeletePopover] = useState(false);
 
     const schoolOptions = ['Factoria F5 Barcelona', 'Factoria F5 Madrid', 'Factoria F5 Asturias'];
     
@@ -60,17 +62,24 @@ const RpForm = () => {
         }
     };
 
-    const handleDeleteAccount = async () => {
-        if (window.confirm('¿Estás seguro de que quieres borrar tu cuenta? Esta acción no se puede deshacer.')) {
-            try {
-                const response = await axios.delete('/api/deleteAccount');
-                console.log('Cuenta borrada:', response.data);
-                // Aquí puedes añadir lógica adicional después de borrar la cuenta, como redireccionar al usuario
-            } catch (error) {
-                console.error('Error al borrar la cuenta:', error);
-                // Aquí puedes manejar los errores, por ejemplo, mostrando un mensaje al usuario
-            }
+    const handleDeleteAccount = () => {
+        setShowDeletePopover(true);
+    };
+
+    const confirmDeleteAccount = async () => {
+        try {
+            const response = await axios.delete('/api/deleteAccount');
+            console.log('Cuenta borrada:', response.data);
+            // Aquí puedes añadir lógica adicional después de borrar la cuenta, como redireccionar al usuario
+        } catch (error) {
+            console.error('Error al borrar la cuenta:', error);
+            // Aquí puedes manejar los errores, por ejemplo, mostrando un mensaje al usuario
         }
+        setShowDeletePopover(false);
+    };
+
+    const cancelDeleteAccount = () => {
+        setShowDeletePopover(false);
     };
 
     return (
@@ -162,6 +171,18 @@ const RpForm = () => {
                     </SectionButtonRp2>        
                 </FormSectionRpProfile1>
             </ProfileRpContainer> 
+            <PopoverWrapper>
+            {showDeletePopover && (
+                <CardPopover
+                    title="¿Estás seguro de eliminar tu cuenta?"
+                    text="No podrás revertir esta opción"
+                    confirmText="Sí"
+                    cancelText="No"
+                    onConfirm={confirmDeleteAccount}
+                    onCancel={cancelDeleteAccount}
+                />
+            )}
+            </PopoverWrapper>
         </>      
     );
 };

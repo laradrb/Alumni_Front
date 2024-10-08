@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import JobOfferCard from '../components/profile/profileCompanies/viewCardJobOffer/JobOfferCard';
 
+
 // Contenedor Principal para Centrar el Contenido
 const ApplicationPageContainer = styled.div`
   display: flex;
@@ -24,11 +25,13 @@ const Title = styled.h1`
   margin-bottom: 3.31rem; // Espaciado inferior para separar del JobOfferCard
 `;
 
+
 // Componente Principal
 const ApplicationToOffer = () => {
   return (
     <ApplicationPageContainer>
             <Title>OFERTA</Title>
+
       <JobOfferCard />
     </ApplicationPageContainer>
   );

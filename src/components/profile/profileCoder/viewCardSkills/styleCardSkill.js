@@ -7,8 +7,6 @@ export const GeneraContainerSkill = styled.div`
   width: 28.75rem;
   justify-content: center;
   align-items: center;
-  margin: 2.8rem;
-
   `;
 
 export const ContainerSkills = styled.div`

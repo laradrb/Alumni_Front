@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Input from '../../../atom/Input'; 
+import Input from '../../../atom/Input';
 import SaveButton from '../../../atom/SaveButton';
-import { CertificacionesContainer, InputContainer, ButtonContainer, Title, FormContainer, ImageUploadContainer} from './styledSettingsCertificateComponent'; 
+import { CertificacionesContainer, InputContainer, PopoverWrapper, ButtonContainer, Title, FormContainer, ImageUploadContainer } from './styledSettingsCertificateComponent';
 import GlobalStyle from '../../../../styled/GlobalStyle';
-
+import CardPopover from '../../../cardPopover/CardPopover'; 
 
 const SettingsCertificate = () => {
     const [formState, setFormState] = useState({
@@ -13,6 +13,7 @@ const SettingsCertificate = () => {
         fechaFin: '',
     });
     const [imagePreview, setImagePreview] = useState(null);
+    const [showDeletePopover, setShowDeletePopover] = useState(false);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -24,25 +25,32 @@ const SettingsCertificate = () => {
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setImagePreview(reader.result);
+                setImagePreview(reader.result); 
             };
             reader.readAsDataURL(file);
         }
     };
 
-    const handleSave = () => {
-        const certificateData = {
-            ...formState,
-            imagen: imagePreview,
-        };
-        console.log('Datos guardados:', certificateData);
+    const handleDeleteAccount = () => {
+        setShowDeletePopover(true);
     };
 
-    const handleDeleteAccount = () => {
-        const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar tu cuenta?");
-        if (confirmDelete) {
-            alert("Cuenta eliminada");
+    const confirmDeleteAccount = async () => {
+        try {
+            const response = await axios.delete('/api/deleteAccount');
+            console.log('Cuenta borrada:', response.data);
+        } catch (error) {
+            console.error('Error al borrar la cuenta:', error);
         }
+        setShowDeletePopover(false);
+    };
+
+    const cancelDeleteAccount = () => {
+        setShowDeletePopover(false);
+    };
+
+    const handleSave = () => {
+        console.log("Cambios guardados", formState);
     };
 
     return (
@@ -55,7 +63,7 @@ const SettingsCertificate = () => {
                         {imagePreview ? (
                             <img src={imagePreview} alt="Vista previa" />
                         ) : (
-                            <p>Subir Imagen</p>
+                            <p>Subir Certificado</p>
                         )}
                         <input
                             type="file"
@@ -94,11 +102,25 @@ const SettingsCertificate = () => {
                             onChange={handleInputChange}
                         />
                     </InputContainer>
-                    </FormContainer>
+                </FormContainer>
+
                 <ButtonContainer>
                     <SaveButton text="Eliminar Certificado" onClick={handleDeleteAccount} />
                     <SaveButton text="Guardar Cambios" onClick={handleSave} />
                 </ButtonContainer>
+
+                {showDeletePopover && (
+                    <PopoverWrapper>
+                        <CardPopover
+                            title="¿Desea eliminar este certificado?"
+                            text="No podrás revertir esta acción"
+                            confirmText="Sí"
+                            cancelText="No"
+                            onConfirm={confirmDeleteAccount}
+                            onCancel={cancelDeleteAccount}
+                        />
+                    </PopoverWrapper>
+                )}
             </CertificacionesContainer>
         </>
     );

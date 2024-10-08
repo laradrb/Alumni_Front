@@ -87,3 +87,10 @@ export const ImageUploadContainer = styled.div`
   }
 `;
 
+export const PopoverWrapper = styled.div`
+    position: fixed;
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+`;

@@ -10,12 +10,12 @@ export const ImageWrapper = styled.div`
   flex-shrink: 0;
   width: 19.875rem;
   height: 16.125rem;
-  margin-top: 5rem;
+  margin-top: 4.5rem;
   
   img {
     width: 19.875rem;
     height: 16.125rem;
-    margin-left: -14rem;
+    margin-left: -15.5rem;
   }
 `;
 

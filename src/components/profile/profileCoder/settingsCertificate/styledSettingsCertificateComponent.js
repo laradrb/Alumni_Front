@@ -38,9 +38,13 @@ export const InputContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  justify-content: center;
-  margin-top: 1.25rem; 
+  justify-content: center; 
+  width: auto;  
+  gap: 1rem;  
+  margin-top: 1rem; 
+  margin-left: -19.31rem;
 `;
+
 
 export const ImageUploadContainer = styled.div`
   width: 17.24rem; 
@@ -82,3 +86,4 @@ export const ImageUploadContainer = styled.div`
     pointer-events: none; 
   }
 `;
+

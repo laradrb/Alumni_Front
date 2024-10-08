@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Input from '../../../atom/Input'; 
+import SaveButton from '../../../atom/SaveButton';
 import { CertificacionesContainer, InputContainer, ButtonContainer, Title, FormContainer, ImageUploadContainer} from './styledSettingsCertificateComponent'; 
 import GlobalStyle from '../../../../styled/GlobalStyle';
 
@@ -34,7 +35,14 @@ const SettingsCertificate = () => {
             ...formState,
             imagen: imagePreview,
         };
-        
+        console.log('Datos guardados:', certificateData);
+    };
+
+    const handleDeleteAccount = () => {
+        const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar tu cuenta?");
+        if (confirmDelete) {
+            alert("Cuenta eliminada");
+        }
     };
 
     return (
@@ -86,9 +94,10 @@ const SettingsCertificate = () => {
                             onChange={handleInputChange}
                         />
                     </InputContainer>
-                </FormContainer>
+                    </FormContainer>
                 <ButtonContainer>
-                  
+                    <SaveButton text="Eliminar Certificado" onClick={handleDeleteAccount} />
+                    <SaveButton text="Guardar Cambios" onClick={handleSave} />
                 </ButtonContainer>
             </CertificacionesContainer>
         </>

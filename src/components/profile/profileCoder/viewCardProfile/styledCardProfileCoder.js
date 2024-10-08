@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
     display: flex;
-    width: 76.118rem;
-    height: 26.188rem;
+    width: 69.75rem;
+    height: 17rem;
 `;
 
 export const CardView = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 64.618rem;
-    height: 26.188rem;
+    width: 52rem;
+    height: 16rem;
 `;
 
 export const ImageContainer = styled.div`

@@ -5,7 +5,6 @@ export const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 36.5rem; // 584px igual que la card
-  margin: 1rem auto;
 `;
 
 export const HeaderContainer = styled.div`

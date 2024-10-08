@@ -1,17 +1,21 @@
 import React from 'react';
-import ProfileView from '../components/profile/profileCoder/viewCardSkills/ProfileView';
-import CertificateCard from '../components/profile/profileCoder/viewCardCertificates/CertificateCard';
+import ProfileView from '../viewCardSkills/ProfileView';
+import CertificateCard from '../viewCardCertificates/CertificateCard';
+import CardProfileCoder from '../viewCardProfile/CardProfileCoder';
+import { MainContainer, SubContainer, SkillsSection, CertificationsSection, VerticalLine } from './styledMainProfileCoder';
+import HorizontalLine from '../../../../assets/img/horizontalLine.png';
 
-const ProfileCoder = () => {
+const MainProfileCoder = () => {
   return (
     <MainContainer>
+        <CardProfileCoder />
+      <img src={HorizontalLine} alt='Linea horizontal naranja'
+      style={{marginLeft: '2rem', marginTop: '3.5rem'}}/>
       <SubContainer>
-        {/* Sección de Habilidades y Tecnologías */}
         <SkillsSection>
           <ProfileView />
         </SkillsSection>
-
-        {/* Sección de Certificaciones */}
+        <VerticalLine />
         <CertificationsSection>
           <CertificateCard
             titulo="Certificado de Desarrollo Web"
@@ -23,7 +27,8 @@ const ProfileCoder = () => {
         </CertificationsSection>
       </SubContainer>
     </MainContainer>
+    
   );
 };
 
-export default ProfileCoder;
+export default MainProfileCoder;

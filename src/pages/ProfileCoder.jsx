@@ -1,16 +1,10 @@
-import React from 'react';
-import ProfileView from '../components/profile/profileCoder/viewCardSkills/ProfileView';
+import React from 'react'
 
 const ProfileCoder = () => {
-    return (
-        <>
+  return (
+    <div>ProfileCoder</div>
+  )
+}
 
-      
+export default ProfileCoder
 
-        <ProfileView/>
-
-        </>
-    )
-};
-
-export default ProfileCoder;

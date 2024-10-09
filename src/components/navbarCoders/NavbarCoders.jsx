@@ -7,13 +7,13 @@ const NavbarCoders = () => {
 return (
     <Nav>
     <NavLinks>
-        <StyledLink to="/alumni">ALUMNI</StyledLink>
-        <StyledLink to="/coders">CODERS</StyledLink>
-        <StyledLink to="/joboffers">OFERTAS</StyledLink>
-        <StyledLink to="/profile">PERFIL</StyledLink>
-        <StyledLink to="/logout">CERRAR SESIÓN</StyledLink>
+        <StyledLink to="/coder/alumni">ALUMNI</StyledLink>
+        <StyledLink to="/coder/listado-coders">CODERS</StyledLink>
+        <StyledLink to="/coder/listado-ofertas">OFERTAS</StyledLink>
+        <StyledLink to="/coder/perfil-coder">PERFIL</StyledLink>
+        <StyledLink to="/coder/logout">CERRAR SESIÓN</StyledLink>
     </NavLinks>
-    <Link to="/alumni">
+    <Link to="/coder/alumni">
     <LogoF5/>
     </Link>
     </Nav>

@@ -7,14 +7,14 @@ const NavbarRp = () => {
 return (
     <Nav>
     <NavLinks>
-        <StyledLink to="/alumni">ALUMNI</StyledLink>
-        <StyledLink to="/coders">CODERS</StyledLink>
-        <StyledLink to="/companies">EMPRESAS</StyledLink>
-        <StyledLink to="/joboffers">OFERTAS</StyledLink>
-        <StyledLink to="/profile">PERFIL</StyledLink>
+        <StyledLink to="/rp/alumni">ALUMNI</StyledLink>
+        <StyledLink to="/rp/listado-coders">CODERS</StyledLink>
+        <StyledLink to="/rp/listado-empresas">EMPRESAS</StyledLink>
+        <StyledLink to="/rp/listado-ofertas">OFERTAS</StyledLink>
+        <StyledLink to="/rp/perfil-rp">PERFIL</StyledLink>
         <StyledLink to="/logout">CERRAR SESIÓN</StyledLink>
     </NavLinks>
-    <Link to="/alumni">
+    <Link to="/rp/alumni">
     <LogoF5/>
     </Link>
     </Nav>

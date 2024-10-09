@@ -17,7 +17,7 @@ const CardProfileCompany = ({ name,  description }) => {
         <CardView>
             <NameEditContainer>
                 <NameCompany>{name || 'Your Name'}</NameCompany>
-                <Link to="/settingsCompany" style={{ textDecoration: 'none' }}>
+                <Link to="/empresa/ajuste-perfil" style={{ textDecoration: 'none' }}>
                     <EditButton
                         role="button" 
                         aria-pressed="false"
@@ -57,7 +57,7 @@ const CardProfileCompany = ({ name,  description }) => {
         <HorizontalLine/>
         <TitleButtonContainer>
         <Title>OFertas</Title>
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/empresa/ajuste-oferta" style={{ textDecoration: 'none' }}>
                     <CertificateButton
         type="button" 
                     aria-pressed="false" 

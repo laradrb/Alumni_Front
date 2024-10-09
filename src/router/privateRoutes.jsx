@@ -19,6 +19,7 @@ import AplicationToOffer from '../pages/AplicationToOffer';
 import CertificateForm from '../pages/CertificateForm';
 import CompaniesList from '../pages/CompaniesList';
 import LimitedProfileCoder from '../pages/LimitedProfileCoder';
+import LimitedCompanyProfile from '../pages/LimitedCompanyProfile';
 
 
 
@@ -44,7 +45,7 @@ export const privateRoutes = [
                     { path: "aplicantes", 
                     element: <OffersList /> },
                     { path: "perfil-coder", 
-                    element: <ProfileCoder /> },
+                    element: <LimitedProfileCoder /> },
                 ],
             },
         ],
@@ -66,7 +67,7 @@ export const privateRoutes = [
                     { path: "aplicar-oferta", 
                     element: <AplicationToOffer /> },
                     { path: "perfil-empresa", 
-                    element: <CompanyProfile /> },
+                    element: <LimitedCompanyProfile /> },
                     { path: "perfil-coder", 
                     element: <ProfileCoder /> },
                     { path: "ajustes-perfil", 
@@ -98,7 +99,7 @@ export const privateRoutes = [
                     { path: "perfil-coder", 
                     element: <LimitedProfileCoder /> },
                     { path: "perfil-empresa", 
-                    element: <CompanyProfile /> },
+                    element: <LimitedCompanyProfile /> },
                     { path: "listado-ofertas", 
                     element: <JobOfferList /> },
                     { path: "oferta", 

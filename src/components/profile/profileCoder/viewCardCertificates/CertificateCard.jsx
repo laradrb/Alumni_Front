@@ -21,7 +21,7 @@ const CertificateCard = ({ titulo, escuela, fechaInicio, fechaFin, imageUrl }) =
       {/* Title Section */}
       <HeaderContainer>
         <HeaderTitle>Certificaciones</HeaderTitle>
-        <CertificateButton onClick={() => window.location.href = '/agregar-certificado'}>
+        <CertificateButton onClick={() => window.location.href = '/coder/formulario-certificado'}>
           Añadir Certificado
         </CertificateButton>
       </HeaderContainer>
@@ -37,7 +37,7 @@ const CertificateCard = ({ titulo, escuela, fechaInicio, fechaFin, imageUrl }) =
           </TextContainer>
         </ContentContainer>
         <ButtonContainer>
-          <SmallButton onClick={() => window.location.href = '/editar-certificado'}>
+          <SmallButton onClick={() => window.location.href = '/coder/formulario-certificado'}>
             Editar
           </SmallButton>
         </ButtonContainer>

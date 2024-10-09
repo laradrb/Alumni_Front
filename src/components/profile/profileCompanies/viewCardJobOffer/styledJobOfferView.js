@@ -8,10 +8,12 @@ export const ApplicationFormContainer = styled.div`
   width: 74.063rem;
   max-width: 90rem;
   height: auto; 
-  margin: 3rem auto; 
+  margin-bottom: 4.825rem; 
+  margin-top: 4.825rem;
+  margin-left: 7.969rem;
+  margin-right: 7.969rem;
 `;
- 
-// Título de la Oferta
+
 export const Title = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-size: 2rem; 
@@ -22,10 +24,10 @@ export const Title = styled.h1`
 `;
 
 export const JobOfferCardContainer = styled.div`
-  border: 0.125rem solid #FF4700; // Borde naranja (2px a rem)
-  width: 74.0625rem; // 1185px a rem
+  border: 0.125rem solid #FF4700; 
+  width: 74.0625rem;
   max-width: 100%;
-  padding: 3.625rem 3.625rem 2.375rem 2.625rem; // 58px, 58px, 38px, 42px a rem
+  padding: 3.625rem 3.625rem 2.375rem 2.625rem; 
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 1.25rem; // 20px a rem

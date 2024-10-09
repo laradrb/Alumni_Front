@@ -1,9 +1,17 @@
+import React from "react";
+import CardProfileCompany from "../components/profile/profileCompanies/viewCardProfile/CardProfileCompany/"
+
 const CompanyProfile = () => {
   return (
-    <div>
-      Company Profile
-    </div>
+    <>
+      <CardProfileCompany   />
+    </>
   )
 }
 
 export default CompanyProfile
+
+
+
+
+

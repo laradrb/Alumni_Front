@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CardListCoder from '../cardListCoder/CardListCoder';
-import { TittleCoder, GeneralContainerCoder, SidebarFilter, FilterTitle, FilterList, FilterItem } from '../cardListCoder/StyledCardListCoder';
+import { TittleCoder, GeneralContainerCoder } from '../cardListCoder/StyledCardListCoder';
+import Filters from '../filters/Filters';
+
 
 const ViewListCoder = () => {
     // Simulación de datos que vendrían del backend
@@ -14,7 +16,7 @@ const ViewListCoder = () => {
         },
         {
             id: 2,
-            name: 'Jane Smith',
+            name: 'Janess Smith',
             location: 'Barcelona, Spain',
             gender: 'Female',
             image: 'https://via.placeholder.com/150'
@@ -54,18 +56,7 @@ const ViewListCoder = () => {
         <>
             <TittleCoder>Coders</TittleCoder>
             <GeneralContainerCoder>
-                <SidebarFilter>
-                    <FilterTitle>Filtros</FilterTitle>
-                    <FilterList>
-                        <FilterItem>Front-End:</FilterItem>
-                        <FilterItem>Back-End:</FilterItem>
-                        <FilterItem>Experiencia:</FilterItem>
-                        <FilterItem>Disponibilidad:</FilterItem>
-                        <FilterItem>Idiomas:</FilterItem>
-                        <FilterItem>Género:</FilterItem>
-                    </FilterList>
-                </SidebarFilter>
-
+            <Filters />
                 {coders.map(coder => (
                     <CardListCoder
                         key={coder.id}

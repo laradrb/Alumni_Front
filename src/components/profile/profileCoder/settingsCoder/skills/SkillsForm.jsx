@@ -1,11 +1,11 @@
 import React from "react";
 import { Container2, Text, Container3, SkillContainer, SkillCheckbox, InnerText } from "./styledSkillsForm";
 
-const SkillsCard = ({ title, skills, selectedSkills, onSkillToggle }) => {
+const SkillsCard = ({ title, skills, selectedSkills, onSkillToggle, customsStyles }) => {
   return (
     <Container2>
       <Text>{title}</Text>
-      <Container3>
+      <Container3 style={customsStyles}>
         {skills.map((skill) => (
           <SkillContainer key={skill}>
             <SkillCheckbox

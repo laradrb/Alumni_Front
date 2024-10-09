@@ -3,7 +3,21 @@ import axios from 'axios';
 import SaveButton from '../../../atom/SaveButton';
 import TextareaAbout from '../../../atom/TextareaAbout';
 import GlobalStyle from '../../../../styled/GlobalStyle';
-import { ProfileCompaniesTitle, ProfileCompaniesContainer, SectionButton, SectionWrapper, ImageSectionLogoProfile, StyledImageCompaniesProfile, FormSectionCompaniesprofile, StyledCompaniesProfile, StyledCompaniesProfile1, FormSectionProfile1 } from './styledCompaniesForm';
+import {
+    ProfileCompaniesTitle,
+    ProfileCompaniesContainer,
+    SectionButton1,
+    SectionButton,
+    SectionWrapper,
+    ImageSectionLogoProfile,
+    StyledImageCompaniesProfile,
+    FormSectionCompaniesprofile,
+    StyledCompaniesProfile,
+    StyledCompaniesProfile1,
+    FormSectionProfile1,
+    PopoverWrapperCompany  
+} from './styledCompaniesForm';
+import CardPopover from '../../../cardPopover/CardPopover';
 
 const CompaniesForm = () => {
     const [profileImage, setProfileImage] = useState(null);
@@ -17,6 +31,8 @@ const CompaniesForm = () => {
         phone: '',
         aboutUs: ''
     });
+    
+    const [showDeletePopover, setShowDeletePopover] = useState(false);
 
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
@@ -49,25 +65,50 @@ const CompaniesForm = () => {
             });
 
             console.log('Form submitted successfully:', response.data);
-            // Handle success (e.g., show a success message, redirect, etc.)
+            alert("Tu cuenta ha sido eliminada.");
+            window.location.href = '/home'; 
         } catch (error) {
             console.error('Error submitting form:', error);
-            // Handle error (e.g., show an error message)
+            alert('Hubo un problema al enviar el formulario. Inténtalo nuevamente.');
         }
+        setFormData({
+            companyName: '',
+            nif: '',
+            email: '',
+            password: '',
+            website: '',
+            phone: '',
+            aboutUs: ''
+        });
+        setProfileImage(null);
+        setImagePreview('');
     };
 
     const handleDeleteAccount = () => {
-        // Implement delete account logic here
-        console.log('Delete account functionality to be implemented');
+        setShowDeletePopover(true);
+    };
+
+    const confirmDeleteAccount = async () => {
+        try {
+            const response = await axios.delete('/api/deleteAccount');
+            console.log('Cuenta borrada:', response.data);
+        } catch (error) {
+            console.error('Error al borrar la cuenta:', error);
+        }
+        setShowDeletePopover(false);
+    };
+
+    const cancelDeleteAccount = () => {
+        setShowDeletePopover(false);
     };
 
     return (
         <>
-        <GlobalStyle/>
-        <ProfileCompaniesTitle>
-            Ajustes de Perfíl
-        </ProfileCompaniesTitle>
-        <ProfileCompaniesContainer>
+            <GlobalStyle />
+            <ProfileCompaniesTitle>
+                Ajustes de Perfíl
+            </ProfileCompaniesTitle>
+            <ProfileCompaniesContainer>
                 <SectionWrapper>
                     <ImageSectionLogoProfile>
                         <label htmlFor="profile-logo-upload" className="cursor-pointer">
@@ -119,14 +160,14 @@ const CompaniesForm = () => {
                         onChange={handleInputChange}
                         value={formData.password}
                     />
-                    <SectionButton>
+                    <SectionButton1>
                         <SaveButton
                             type="button"
                             aria-label="Borrar cuenta"
                             text="Borrar cuenta"
                             onClick={handleDeleteAccount}
                         />
-                    </SectionButton>     
+                    </SectionButton1>     
                 </FormSectionCompaniesprofile>                 
                 <FormSectionProfile1> 
                     <StyledCompaniesProfile1
@@ -162,7 +203,19 @@ const CompaniesForm = () => {
                     </SectionButton>             
                 </FormSectionProfile1>
             </ProfileCompaniesContainer> 
-        </>      
+            <PopoverWrapperCompany>
+                {showDeletePopover && (
+                    <CardPopover
+                        title="¿Estás seguro de eliminar tu cuenta?"
+                        text="No podrás revertir esta opción"
+                        confirmText="Sí"
+                        cancelText="No"
+                        onConfirm={confirmDeleteAccount}
+                        onCancel={cancelDeleteAccount}
+                    />
+                )}
+            </PopoverWrapperCompany>
+        </>
     );
 };
 

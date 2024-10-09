@@ -12,7 +12,7 @@ const HalfCircle = () => {
                 />
             </ImageWrapper>
         <Container2>
-            <Text>Si eres un desarrollador en busca de nuevas oportunidades como si eres una empresa que necesita talento especializado para sus proyectos, en Alumni te brindamos las herramientas y conexiones necesarias para alcanzar el próximo nivel. <br></br>Desarrolladores talentosos y empresas con visión se unen aquí para avanzar juntos hacia un futuro innovador.</Text>
+            <Text>Si te dedicas al desarrollo y buscas nuevas oportunidades, o si eres una empresa que necesita talento especializado para sus proyectos, en Alumni te brindamos las herramientas y conexiones necesarias para alcanzar el próximo nivel. <br></br>Personas desarrolladoras talentosas y organizaciones con visión se unen aquí para avanzar juntas hacia un futuro innovador.</Text>
         </Container2>
         </Container>
     );

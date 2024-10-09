@@ -30,7 +30,7 @@ describe('OrangeCard Component', () => {
 
     it('should render the correct text', () => {
         render(<OrangeCard />);
-        const supportText = screen.getByText(/Nadie Comprende Mejor Los Retos De Un Desarrollador Que Otro Experto En El Campo. Únete A Nuestra Comunidad Y Encuentra El Soporte Que Necesitas Para Crecer./i);
+        const supportText = screen.getByText(/Nadie comprende mejor los retos de quienes se dedican al desarrollo que otras personas expertas en el campo. Únete a nuestra comunidad y encuentra el apoyo que necesitas para crecer./i);
         expect(supportText).toBeInTheDocument();
     });
 });

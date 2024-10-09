@@ -3,11 +3,14 @@ import styled from "styled-components";
 
 export const GeneralContainerCoder = styled.div`
 display: flex;
+flex-wrap: wrap;
 align-items: flex-start;
-gap: 8.125rem;
+gap: 6.125rem;
 width: 100%;
-padding: 20px;
-margin: 0 auto;
+height: auto;
+padding: 10px;
+
+
 `;
 
 export const TittleCoder = styled.h1`
@@ -22,13 +25,7 @@ width: 100%;
 margin-bottom: 1.25rem;
 `;
 
-export const SidebarFilter = styled.div`
-width: 15.813rem;
-height: 83.375rem;
-padding: 1.25rem;
-border: 1px solid var(--Orange-Factoria, #FF4702);
-background: var(--Base-White, #FFF);
-`;
+
 
 export const CodersSection = styled.div`
 display: flex;
@@ -38,30 +35,6 @@ padding: 1.25rem;
 gap: 1.25rem;
 `;
 
-
-export const FilterTitle = styled.h3`
-color: var(--Orange-Factoria, #FF4702);
-text-align: center;
-font-family: Poppins;
-font-size: 1.25rem;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-`;
-
-export const FilterList = styled.ul`
-list-style: none;
-padding: 0;
-`;
-
-export const FilterItem = styled.li`
-color: #2E2E2E;
-font-family: Poppins;
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-`;
 
 
 export const CoderCard = styled.div`
@@ -76,8 +49,6 @@ border: 0.063rem solid var(--Orange-Factoria, #FF4700);
 background: var(--Base-White, #FFF);
 padding: 0.938rem;
 margin-bottom: 1.25rem;
-display: flex;
-align-items: center;
 `;
 
 export const CoderImage = styled.img`
@@ -91,7 +62,7 @@ margin-right: 1.25rem;
 
 export const CoderInfo = styled.div`
 display: flex;
-width: 9.188rem;
+width: 8.188rem;
 height: 1.438rem;
 flex-direction: column;
 justify-content: center;

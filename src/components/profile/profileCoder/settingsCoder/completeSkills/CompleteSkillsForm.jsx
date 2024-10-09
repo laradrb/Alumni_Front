@@ -8,7 +8,7 @@ const skillsFrontEnd = [
   "HTML", "CSS", "JavaScript", "TypeScript", "React.js", 
   "Vue.js", "Angular", "Svelte", "Sass", "Less", 
   "Bootstrap", "Tailwind CSS", "Styled Components", "Alpine.js", "Mithril.js", "Next.js", "Gatsby.js", "Pug", "Jest", "Vite", "Parcel"
- ];
+];
 
 const skillsBackEnd = [
   "Java", "PostgreSQL", "Spring Boot", "Postman", "APIRest", 

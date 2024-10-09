@@ -1,10 +1,9 @@
 import React from 'react'
+import JobOfferView from '../components/profile/profileCompanies/viewCardJobOffer/JobOfferView'
 
 const JobOffer = () => {
   return (
-    <div>
-      Job Offer
-    </div>
+   <JobOfferView />
   )
 }
 

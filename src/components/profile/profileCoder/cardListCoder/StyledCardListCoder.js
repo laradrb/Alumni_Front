@@ -108,3 +108,17 @@ font-style: normal;
 font-weight: 300;
 line-height: normal;
 `;
+
+export const StyleCVButton2 = styled.button`
+    width: 7.125rem; 
+    height: 3.375rem; 
+    display: flex;
+    border: 0.063rem solid #f74702;
+    border-radius: 1.825rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.05rem; 
+    transform: scale(0.8); 
+    margin-bottom: 1.813rem;
+    margin-left: 2.063rem;
+`;

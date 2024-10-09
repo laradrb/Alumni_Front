@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 69rem; 
+  width: 67.5rem; 
   background-color: #ffffff;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@ export const Title = styled.h2`
   font-size: 1.125rem;
   font-weight: 500; 
   color: #FF4700; 
-  margin: 0; 
+  margin-left: 2rem; 
   padding: 0.5rem 0;
 `;
 
@@ -32,7 +32,7 @@ export const ColumnsContainer = styled.div`
 `;
 
 export const Column = styled.div`
-  flex: 1; /* Crea responsive Layout dentro de la columna */
+  flex: 1; 
   margin: 0.3125rem; 
   padding: 0.625rem; 
   border-radius: 0.3125rem; 

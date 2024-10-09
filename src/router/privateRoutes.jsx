@@ -17,6 +17,9 @@ import CoderList from '../pages/CoderList';
 import JobOfferList from '../pages/JobOfferList';
 import AplicationToOffer from '../pages/AplicationToOffer';
 import CertificateForm from '../pages/CertificateForm';
+import CompaniesList from '../pages/CompaniesList';
+import LimitedProfileCoder from '../pages/LimitedProfileCoder';
+import LimitedCompanyProfile from '../pages/LimitedCompanyProfile';
 
 
 
@@ -42,7 +45,7 @@ export const privateRoutes = [
                     { path: "aplicantes", 
                     element: <OffersList /> },
                     { path: "perfil-coder", 
-                    element: <ProfileCoder /> },
+                    element: <LimitedProfileCoder /> },
                 ],
             },
         ],
@@ -64,7 +67,7 @@ export const privateRoutes = [
                     { path: "aplicar-oferta", 
                     element: <AplicationToOffer /> },
                     { path: "perfil-empresa", 
-                    element: <CompanyProfile /> },
+                    element: <LimitedCompanyProfile /> },
                     { path: "perfil-coder", 
                     element: <ProfileCoder /> },
                     { path: "ajustes-perfil", 
@@ -89,6 +92,18 @@ export const privateRoutes = [
                     element: <RpProfile /> },
                     { path: "ajustes-rp", 
                     element: <SettingsRP /> },
+                    { path: "listado-coders", 
+                    element: <CoderList /> },
+                    { path: "listado-empresas", 
+                    element: <CompaniesList /> },
+                    { path: "perfil-coder", 
+                    element: <LimitedProfileCoder /> },
+                    { path: "perfil-empresa", 
+                    element: <LimitedCompanyProfile /> },
+                    { path: "listado-ofertas", 
+                    element: <JobOfferList /> },
+                    { path: "oferta", 
+                    element: <JobOffer /> },
                 ],
             },
         ],

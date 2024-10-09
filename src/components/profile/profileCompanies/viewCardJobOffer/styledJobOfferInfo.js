@@ -7,6 +7,7 @@ export const JobOfferContainer = styled.div`
   height: 11.5rem; 
   background-color: #FFFFFF;
   margin-bottom: 2.625rem; 
+  border-radius: 1.25rem;
 `;
 
 export const LogoContainer = styled.div`

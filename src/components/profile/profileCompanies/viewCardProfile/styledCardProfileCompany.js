@@ -125,3 +125,32 @@ export const TitleButtonContainer = styled.div`
     margin-top: 2rem;
 `;
 
+export const TitleButtonContainer1 = styled.div`
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem; 
+`;
+
+export const Title1 = styled.h2`
+color: #FF4700;
+text-align: start;
+font-family: Poppins;
+font-size: 2rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-left: 3.69rem;
+margin-top: 1.88rem;
+`;
+
+export const JobOfferContainer1 = styled.div`
+    display: flex;
+    align-items: center;
+    width: 69rem; 
+    height: 15.5rem; 
+    background-color: #FFFFFF;
+    margin-top: 1rem; 
+    margin-left: 2rem;
+    border-radius: 1.25rem;
+    border: 2px solid #FF4700;
+`;

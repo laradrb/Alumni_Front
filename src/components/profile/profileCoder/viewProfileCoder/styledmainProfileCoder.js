@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// Componente principal
 export const MainContainer = styled.div`
   width: 74.2rem;
   min-height: 63.68rem;
@@ -24,7 +23,7 @@ export const SubContainer = styled.div`
   box-sizing: border-box;
 `;
 
-// Sección de habilidades (skills)
+
 export const SkillsSection = styled.div`
   width: 28.4rem;
   padding-right: 1rem;
@@ -41,13 +40,13 @@ export const VerticalLine = styled.div`
  position: absolute;
  `;
 
-// Sección de certificaciones
+
 export const CertificationsSection = styled.div`
   width: 36.5rem;
   height: 9.81rem;
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+  font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
 `;

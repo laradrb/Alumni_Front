@@ -42,6 +42,7 @@ export const AboutMe = styled.p`
     color: #333;
     margin: 0.625rem 0;
     margin-bottom: 2.5rem;
+    font-family: 'Poppins', sans-serif;
 `;
 
 export const ButtonContainer = styled.div`

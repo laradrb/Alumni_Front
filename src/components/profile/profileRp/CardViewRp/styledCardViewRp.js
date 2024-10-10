@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  display: flex;              
+  flex-direction: column;            
+  justify-content: center;  
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+`;
+
 export const HeaderText = styled.h1`
 color: #FF4700;
 text-align: center;
-font-family: Poppins, sans-serif;
+font-family: "Poppins", sans-serif;
 font-size: 32px;
 font-weight: 700;
+line-height: normal;
 `;
 
 export const ProfileContainer = styled.div`
@@ -15,9 +24,8 @@ display: flex;
 flex-direction: row;
 padding: 20px;
 margin: 0 auto;
-border-radius: 20px;
+border-radius: 1.25rem;
 border: 3px solid #FF4700;
-box-shadow: 0px 4px 4px 0px #FF4700 inset;
 margin-bottom: 40px;
 `;
 
@@ -44,7 +52,7 @@ margin-top: 4.188rem;
 
 export const Name = styled.h1`
 color: #000;
-font-family: Poppins, sans-serif;
+font-family: "Poppins", sans-serif;
 font-size: 20px;
 font-weight: 500;
 margin: 0;
@@ -76,11 +84,15 @@ background-color: #f74702;
 color: white;
 border: 0.063rem solid #f74702;
 border-radius: 1.875rem;
-font-family: "Poppins, sans-serif";
+font-family: "Poppins", sans-serif;
 font-size: 0.813rem;
 font-weight: 700;
 cursor: pointer;
 transition: all 0.3s ease;
+color: var(--Base-White, #FFF);
+text-align: center;
+font-style: normal;
+line-height: normal;
 
 &:hover {
     background-color: white;

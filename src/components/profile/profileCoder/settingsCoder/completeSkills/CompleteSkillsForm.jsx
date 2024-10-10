@@ -3,6 +3,7 @@ import SkillsCard from "../skills/SkillsForm";
 import SaveButton from "../../../../atom/SaveButton";
 import { AppContainer, Container, Container6 } from "../skills/styledSkillsForm";
 import { ContainerButtons } from "./styledCompleteSkills";
+import CardPopover from '../../../../cardPopover/CardPopover';
 
 const skillsFrontEnd = [
   "HTML", "CSS", "JavaScript", "TypeScript", "React.js", 
@@ -36,9 +37,9 @@ const skillsGender = [
   "Mujer", "Hombre", "Prefiero no decirlo" 
 ];
 
-
 const CompleteSkills = () => {
   const [selectedSkills, setSelectedSkills] = useState([]);
+  const [showDeletePopover, setShowDeletePopover] = useState(false);
 
   const handleSkillToggle = (skill) => {
     setSelectedSkills((prevSelected) =>
@@ -68,26 +69,34 @@ const CompleteSkills = () => {
   };
 
   const handleDeleteAccount = () => {
-    if (window.confirm("¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.")) {
-      fetch("/api/coder/delete-account/", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (response.ok) {
-            alert("Tu cuenta ha sido eliminada.");
-            window.location.href = "/home";
-          } else {
-            alert("Hubo un error al intentar eliminar la cuenta.");
-          }
-        })
-        .catch((error) => {
-          console.error("Error al eliminar la cuenta:", error);
+    setShowDeletePopover(true);
+  };
+
+  const confirmDeleteAccount = () => {
+    fetch("/api/coder/delete-account/", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Tu cuenta ha sido eliminada.");
+          window.location.href = "/home";
+        } else {
           alert("Hubo un error al intentar eliminar la cuenta.");
-        });
-    }
+        }
+      })
+      .catch((error) => {
+        console.error("Error al eliminar la cuenta:", error);
+        alert("Hubo un error al intentar eliminar la cuenta.");
+      });
+
+    setShowDeletePopover(false); 
+  };
+
+  const cancelDeleteAccount = () => {
+    setShowDeletePopover(false); 
   };
 
   return (
@@ -136,12 +145,37 @@ const CompleteSkills = () => {
             selectedSkills={selectedSkills}
             onSkillToggle={handleSkillToggle}
           />
-          </Container6>
-          <ContainerButtons>
-          <SaveButton text="Borrar Cuenta" onClick={handleDeleteAccount} />
-          <SaveButton text="Guardar Cambios" onClick={handleSaveChanges} />
-          </ContainerButtons>
+        </Container6>
+        <ContainerButtons>
+          <SaveButton 
+            text="Borrar Cuenta" 
+            onClick={handleDeleteAccount} 
+          />
+          <SaveButton 
+            text="Guardar Cambios" 
+            onClick={handleSaveChanges} 
+          />
+        </ContainerButtons>
       </Container>
+
+      {showDeletePopover && (
+        <div style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 1000, 
+        }}>
+          <CardPopover
+            title="¿Estás seguro de eliminar tu cuenta?"
+            text="No podrás revertir esta opción"
+            confirmText="Sí"
+            cancelText="No"
+            onConfirm={confirmDeleteAccount}
+            onCancel={cancelDeleteAccount}
+          />
+        </div>
+      )}
     </AppContainer>
   );
 };

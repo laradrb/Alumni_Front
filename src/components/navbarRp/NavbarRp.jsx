@@ -12,7 +12,7 @@ return (
         <StyledLink to="/rp/listado-empresas">EMPRESAS</StyledLink>
         <StyledLink to="/rp/listado-ofertas">OFERTAS</StyledLink>
         <StyledLink to="/rp/perfil-rp">PERFIL</StyledLink>
-        <StyledLink to="/logout">CERRAR SESIÓN</StyledLink>
+        <StyledLink to="/home">CERRAR SESIÓN</StyledLink>
     </NavLinks>
     <Link to="/rp/alumni">
     <LogoF5/>

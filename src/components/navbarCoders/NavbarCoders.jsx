@@ -11,7 +11,7 @@ return (
         <StyledLink to="/coder/listado-coders">CODERS</StyledLink>
         <StyledLink to="/coder/listado-ofertas">OFERTAS</StyledLink>
         <StyledLink to="/coder/perfil-coder">PERFIL</StyledLink>
-        <StyledLink to="/coder/logout">CERRAR SESIÓN</StyledLink>
+        <StyledLink to="/home">CERRAR SESIÓN</StyledLink>
     </NavLinks>
     <Link to="/coder/alumni">
     <LogoF5/>

@@ -9,7 +9,7 @@ return (
     <NavLinks>
         <StyledLink to="/empresa/aplicaciones-oferta">APLICACIONES</StyledLink>
         <StyledLink to="/empresa/perfil-empresa">PERFIL</StyledLink>
-        <StyledLink to="/logout">CERRAR SESIÓN</StyledLink>
+        <StyledLink to="/home">CERRAR SESIÓN</StyledLink>
     </NavLinks>
     <Link to="/home">
     <LogoF5/>

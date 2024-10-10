@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const InputGeneral = styled.input`
     width: 31.041rem;
     height: 3.222rem;

@@ -26,8 +26,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-border: 0.125rem solid #FF4700;
-
+  border: 0.125rem solid #FF4700;
 `;
 
 export const CardTitle = styled.h2`
@@ -37,7 +36,7 @@ export const CardTitle = styled.h2`
   font-weight: bolder;
   font-family: 'Poppins', sans-serif;
   margin-top: 2rem;
-    `;
+`;
 
 export const Text = styled.p`
   font-size: 1.25rem;
@@ -48,8 +47,7 @@ export const Text = styled.p`
   margin-top: 2rem;
   text-align: center;
   max-width: 24rem;
-  
-  `;
+`;
 
 export const Button = styled(Link)`
   background-color: #FF4700;

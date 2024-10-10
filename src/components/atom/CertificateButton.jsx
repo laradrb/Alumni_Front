@@ -34,8 +34,7 @@ const CertificateButton = ({ children, ...props }) => {
     const navigate = useNavigate();  
 
     const handleClick = () => {
-        // Redirige a la ex-coder a la página del formulario del certificado
-        navigate('/ruta-del-formulario-certificado'); 
+        navigate('/coder/formulario-certificado'); 
     };
 
     return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const ButtonStyled = styled.button`
     width: 31.041rem;
     height: 3.222rem;

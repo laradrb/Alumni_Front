@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const GeneralContainerCoder = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -9,8 +8,6 @@ gap: 6.125rem;
 width: 100%;
 height: auto;
 padding: 10px;
-
-
 `;
 
 export const TittleCoder = styled.h1`
@@ -25,8 +22,6 @@ width: 100%;
 margin-bottom: 1.25rem;
 `;
 
-
-
 export const CodersSection = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -34,8 +29,6 @@ justify-content: center;
 padding: 1.25rem;
 gap: 1.25rem;
 `;
-
-
 
 export const CoderCard = styled.div`
 display: flex;

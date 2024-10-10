@@ -22,22 +22,4 @@ export const StyledButtonLinkLg = styled.a`
     background-color: #ffffff; 
     color: #FF4700; 
   }
-
-  /* Media Queries */
-  
-  /* Para pantallas medianas como tablets */
-  @media (max-width: 768px) {
-    width: 24rem; 
-    font-size: 0.875rem; 
-    line-height: 3.5rem; /* Ajuste para mantener centrado el texto */
-  }
-
-  /* Para pantallas pequeñas como móviles */
-  @media (max-width: 480px) {
-    width: 90%; 
-    font-size: 0.70rem; 
-    line-height: 3rem; 
-    height: 3rem; 
-    border-radius: 20px; 
-  }
 `;

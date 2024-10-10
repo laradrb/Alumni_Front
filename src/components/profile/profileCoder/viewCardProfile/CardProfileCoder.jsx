@@ -13,7 +13,7 @@ return (
         <CardView>
             <NameEditContainer>
                 <NameCoder>{name || 'Your Name'}</NameCoder>
-                <Link to="/settingsCoder" style={{ textDecoration: 'none' }}>
+                <Link to="/coder/ajustes-perfil" style={{ textDecoration: 'none' }}>
                     <EditButton
                         role="button" 
                         aria-pressed="false"

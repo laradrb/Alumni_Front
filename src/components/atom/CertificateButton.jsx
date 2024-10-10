@@ -14,10 +14,14 @@ const ButtonStyled = styled.button`
     box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     border-radius: 1.875rem;
-    font-size: 0.875rem;
-    font-family: "Poppins, sans-serif"
+    font-size: 0.8125rem;
+    font-family: "Poppins", sans-serif;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
     
     &:hover {
         background-color: white;

@@ -14,7 +14,7 @@ const ButtonStyled = styled.button`
     box-shadow: 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.1), 0 -0.25rem 0.375rem -0.063rem rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     border-radius: 1.875rem;
-    font-family: "Poppins, sans-serif";
+    font-family: "Poppins", sans-serif;
     font-size: 0.813rem;
     font-weight: 700;
     cursor: pointer;

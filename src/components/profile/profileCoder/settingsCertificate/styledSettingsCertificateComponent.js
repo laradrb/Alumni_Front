@@ -6,8 +6,10 @@ export const CertificacionesContainer = styled.div`
   padding: 1.25rem;  
   width: 66.8125rem;  
   height: 33.9375rem; 
-  margin: 0 auto;
   text-align: center;
+  margin-top: 4rem; 
+  margin-left: 11.5rem;
+  margin-bottom: 12.6rem;
 `;
 
 export const Title = styled.h2`
@@ -18,6 +20,7 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 2rem;
 `;
 
 export const FormContainer = styled.div`

@@ -13,4 +13,4 @@ return (
 )
 }
 
-export default RpLayout
+export default RpLayout;

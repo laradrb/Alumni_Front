@@ -26,7 +26,6 @@ font-weight: 600;
 position: relative;
 letter-spacing: 0.1em;
 
-
 &.active, &:hover {  
     color: #FF4700;
 }
@@ -42,6 +41,5 @@ letter-spacing: 0.1em;
     bottom: -8px; 
     transition: all 0.3s ease; 
 }
-
 `;
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 export const StyledAboutme = styled.textarea`
     width: 25rem;
     height: 7.625rem;

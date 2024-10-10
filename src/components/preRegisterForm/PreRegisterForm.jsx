@@ -21,7 +21,7 @@ const PreRegisterForm = () => {
 
 export default PreRegisterForm;
 
-// Wrapper para alinear vertical y horizontalmente el formulario completo
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,11 +36,9 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-family: Poppins, Helvetica, Arial, sans-serif;
   font-size: 2.5rem;
-  color: #373737;
-  
+  color: #373737; 
   padding-bottom: 1.5rem; 
   text-align: center;
-
 `;
 
 const Container = styled.div`
@@ -55,14 +53,13 @@ const Container = styled.div`
   border-radius: 1rem; 
   border: 0.125rem solid #ff4700; 
   box-shadow: 0rem 0.25rem 0.375rem rgba(0, 0, 0, 0.1); 
-
 `;
 
 const SubTitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Ocupa todo el espacio disponible hasta el primer botón */
+  flex-grow: 1;
   width: 100%;
 `;
 
@@ -71,15 +68,12 @@ const SubTitle = styled.h2`
   font-size: 1.5rem; 
   color: #373737;
   text-align: center;
-
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.875rem; /* 40px de espacio entre los botones */
-  margin-top: 1.5rem;/* Para bajar un poco el conjunto de botones */
+  gap: 2.875rem; 
+  margin-top: 1.5rem;
   padding-bottom: 5rem; 
-
-
 `;

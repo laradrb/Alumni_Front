@@ -1,9 +1,10 @@
 import React from 'react'
+import JobOffersList from '../components/JobOffersList/JobOffersList'
 
 const JobOfferList = () => {
 return (
     <div>
-    listado ofertas
+    <JobOffersList />
     </div>
 )
 }

@@ -10,6 +10,7 @@ border: 1px solid var(--Orange-Factoria, #FF4702);
 background: var(--Base-White, #FFF);
 overflow-y: auto;
 margin-left: 1.25rem;
+margin-bottom: 2.5rem;
 `;
 
 

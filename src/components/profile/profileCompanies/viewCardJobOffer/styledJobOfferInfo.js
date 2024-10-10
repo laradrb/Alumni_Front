@@ -16,6 +16,8 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2.5rem;
+  margin-left: 1.3rem;
 `;
 
 export const CompanyLogo = styled.img`
@@ -36,7 +38,6 @@ export const JobTitle = styled.h2`
   font-size: 1.125rem;
   font-weight: 500;
   color: #000000;
-  border: 0.125rem solid #e0e0e0; 
   margin-top: 4.375rem; 
   margin-bottom: 0.9375rem;
 `;

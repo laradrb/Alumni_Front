@@ -1,9 +1,10 @@
 import React from 'react'
+import MainJobOffersList from '../components/JobOffersList/MainJobOffersList'
 
 const CompanyOfferList = () => {
   return (
     <div>
-      aplicaciones ofertas
+      <MainJobOffersList/>
     </div>
   )
 }

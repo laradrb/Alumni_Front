@@ -61,9 +61,6 @@ margin-right: 1.25rem;
 `;
 
 export const CoderInfo = styled.div`
-display: flex;
-width: 8.188rem;
-height: 1.438rem;
 flex-direction: column;
 justify-content: center;
 flex-shrink: 0;
@@ -77,7 +74,6 @@ flex-direction: column;
 justify-content: center;
 flex-shrink: 0;
 color: var(--Black-Factoria, #020100);
-text-align: center;
 font-family: Poppins;
 font-size: 1.25rem;
 font-style: normal;

@@ -1,9 +1,10 @@
 import React from 'react'
-import CardListCoderCv from '../components/profile/profileCoder/cardListCoder/CardListCoderCv'
+import MainViewListCoderCv from '../components/profile/profileCoder/viewListCoder/MainWiewListCoderCv'
+
 const OffersList = () => {
   return (
     <div>
-    <CardListCoderCv/>
+      <MainViewListCoderCv/>
     </div>
   )
 }

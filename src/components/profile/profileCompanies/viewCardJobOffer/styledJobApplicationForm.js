@@ -8,10 +8,11 @@ export const ApplicationFormContainer = styled.div`
   width: 74.063rem;
   max-width: 90rem;
   height: auto; 
-  margin: 3rem auto; 
+  margin-top: 2rem;
+  margin-left: 8rem;
+  margin-bottom: 7.2rem;
 `;
  
-// Título de la Oferta
 export const Title = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-size: 2rem; 

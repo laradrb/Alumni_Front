@@ -29,3 +29,11 @@ export const JobsContainer = styled.div`
   margin-right: 1.3rem;
   gap: 1.5rem;
 `;
+
+export const MainJobOffersListContainer = styled.div`
+  display: flex;
+  width: 75.25rem;
+  height: auto;
+  margin-left: 8.375rem;
+  margin-top: 4.998rem;
+  `;

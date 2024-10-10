@@ -1,5 +1,5 @@
+import ButtonCardListCoderCv from "../../../atom/ButtonCardListCoderCv";
 import { CoderCard, CoderName, CoderDetails, CoderImage, CoderInfo, CoderRole, StyleCVButton2 } from "./StyledCardListCoder";
-import CVButton from '../../../atom/CVButton'
 
 const CardListCoder = ({name,location,gender,image}) => {
     return (
@@ -11,9 +11,10 @@ const CardListCoder = ({name,location,gender,image}) => {
                 <CoderDetails>{location}</CoderDetails>
                 <CoderRole>{gender}</CoderRole>
                 <StyleCVButton2>
-                <CVButton>
+                <ButtonCardListCoderCv
+                >
                     CV
-                </CVButton>
+                </ButtonCardListCoderCv>
                 </StyleCVButton2>
             </CoderInfo>
         </CoderCard>

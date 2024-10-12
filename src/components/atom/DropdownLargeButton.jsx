@@ -100,7 +100,7 @@ const DropdownLargeButtonComponent = ({ options, onSelect, buttonText }) => {
             <DropdownList $isOpen={isOpen && !isClosing}>
                 {options.map((option, index) => (
                     <DropdownItem key={index} onClick={() => handleSelect(option)}>
-                        {option}
+                        {option.name}
                     </DropdownItem>
                 ))}
             </DropdownList>

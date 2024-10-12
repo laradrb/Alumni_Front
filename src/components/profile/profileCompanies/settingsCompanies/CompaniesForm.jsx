@@ -23,13 +23,13 @@ const CompaniesForm = () => {
     const [profileImage, setProfileImage] = useState(null);
     const [imagePreview, setImagePreview] = useState('');
     const [formData, setFormData] = useState({
-        companyName: '',
+        company_name: '',
         nif: '',
         email: '',
         password: '',
         website: '',
         phone: '',
-        aboutUs: ''
+        description: ''
     });
     
     const [showDeletePopover, setShowDeletePopover] = useState(false);
@@ -58,30 +58,35 @@ const CompaniesForm = () => {
                 formDataToSend.append('profileImage', profileImage);
             }
 
-            const response = await axios.post('YOUR_BACKEND_API_URL', formDataToSend, {
+            const pk = 4; 
+            const role = 'empresa'; 
+
+            const response = await axios.put(`api/update/${pk}/${role}/`, formDataToSend, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
             });
 
-            console.log('Form submitted successfully:', response.data);
-            alert("Tu cuenta ha sido eliminada.");
-            window.location.href = '/home'; 
+            console.log('Formulario enviado correctamente:', response.data);
+            alert("Los cambios han sido guardados exitosamente.");
+
+            setFormData({
+                company_name: '',
+                nif: '',
+                email: '',
+                password: '',
+                website: '',
+                phone: '',
+                description: ''
+            });
+            setProfileImage(null);
+            setImagePreview('');
+
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error('Error al enviar el formulario:', error);
             alert('Hubo un problema al enviar el formulario. Inténtalo nuevamente.');
         }
-        setFormData({
-            companyName: '',
-            nif: '',
-            email: '',
-            password: '',
-            website: '',
-            phone: '',
-            aboutUs: ''
-        });
-        setProfileImage(null);
-        setImagePreview('');
     };
 
     const handleDeleteAccount = () => {
@@ -90,10 +95,17 @@ const CompaniesForm = () => {
 
     const confirmDeleteAccount = async () => {
         try {
-            const response = await axios.delete('/api/deleteAccount');
+            const response = await axios.delete('/api/deleteAccount', {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}` 
+                }
+            });
             console.log('Cuenta borrada:', response.data);
+            alert("Tu cuenta ha sido eliminada.");
+            window.location.href = '/home'; 
         } catch (error) {
             console.error('Error al borrar la cuenta:', error);
+            alert('Hubo un problema al borrar la cuenta. Inténtalo nuevamente.');
         }
         setShowDeletePopover(false);
     };
@@ -130,11 +142,11 @@ const CompaniesForm = () => {
                 <FormSectionCompaniesprofile>
                     <StyledCompaniesProfile
                         type="text"
-                        name="companyName"
+                        name="company_name"
                         placeholder="Nombre Empresa/Razón social" 
                         aria-label="Insertar Nombre de la Empresa o Razón social" 
                         onChange={handleInputChange}
-                        value={formData.companyName}
+                        value={formData.company_name}
                     />
                     <StyledCompaniesProfile
                         type="text"
@@ -187,11 +199,11 @@ const CompaniesForm = () => {
                         value={formData.phone}
                     />      
                     <TextareaAbout
-                        name="aboutUs"
+                        name="description"
                         placeholder="Sobre nosotros" 
                         aria-label="Insertar sobre nosotros"
                         onChange={handleInputChange}
-                        value={formData.aboutUs}
+                        value={formData.description}
                     /> 
                     <SectionButton>
                         <SaveButton

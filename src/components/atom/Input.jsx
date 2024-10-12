@@ -21,11 +21,14 @@ const InputGeneral = styled.input`
     }
 `;
 
-const Input = ({ type, placeholder }) => {
+const Input = ({ type, placeholder, name, value, onChange }) => {
     return (
         <InputGeneral 
             type={type} 
+            name={name}
             placeholder={placeholder} 
+            value = {value}
+            onChange = {onChange}
         />
     );
 };

@@ -1,19 +1,85 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import LargeButton from '../../atom/LargeButton';
 import registerRP from '../../../assets/img/registerRP.jpg';
 import GlobalStyle from '../../../styled/GlobalStyle';
 import {RegisterContainer, DropdownContainer, FormSection, Title, Subtitle, Form, StyledInput, ButtonContainer, LinkContainer, StyledLink, ImageSection, StyledImage} from './styledRegisterRPComponents';
 import Dropdown from '../../atom/DropdownLargeButton';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
 const RegisterRPComponent = () => {
+    const navigate = useNavigate(); 
+    const [formData, setFormData] = useState({
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        school: ''
+    });
 
-    const [selectedOptionSchool, setSelectedOptionSchool] = useState('');
+    console.log("Estado actual del formulario:", formData);
 
-    const schoolOptions = ['Factoria F5 Barcelona', 'Factoria F5 Madrid', 'Factoria F5 Asturias'];
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        console.log(`Cambiando el campo ${name} a:`, value); 
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
+    const handleSignUp = async (e) => {
+        e.preventDefault(); 
+
+        const { first_name, last_name, email, password, school } = formData;
+
+        console.log("Valores enviados:", { first_name, last_name, email, password, school });
+
+        if (!first_name || !last_name || !email || !password || !school) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+
+        try {
+            const response = await axios.post(`${API_BASE_URL}/api/users/create_user/`, {
+                first_name,
+                last_name,
+                email,
+                password,
+                school,
+                role: 'rp', 
+            });
+
+            if (response.status === 201) {
+                const data = response.data;
+                localStorage.setItem('authToken', data.token);
+                localStorage.setItem('userNombre', first_name);
+                localStorage.setItem('userApellidos', last_name);
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userSchool', school);
+                alert("¡Registro exitoso!");
+                navigate("/login");
+            } else {
+                alert("Error: " + response.data.message);
+            }
+        } catch (error) {
+            console.error("Error durante el registro:", error.response.data);
+            alert("Ocurrió un error: " + error.response.data.error || "Por favor, intenta de nuevo más tarde.");
+        }
+        
+    };
+
+    const schoolOptions = [
+        { id: 1, name: 'Factoria F5 Barcelona' },
+        { id: 2, name:  'Factoria F5 Madrid' },
+        { id: 3, name: 'Factoria F5 Asturias' }
+    ];
 
     const handleSchoolSelect = (option) => {
-        setSelectedOptionSchool(option);
-    };
+            console.log("Escuela seleccionada:", option); 
+            setFormData({ ...formData, school: option.id });
+        };
 
     return (
         <>
@@ -25,39 +91,49 @@ const RegisterRPComponent = () => {
                         Regístrate para acceder a tu <br />
                         cuenta en Alumni
                     </Subtitle>
-                    <Form>
+                    <Form onSubmit={handleSignUp} >
                         <StyledInput 
                             type="text" 
-                            placeholder="Nombre" 
+                            name="first_name" 
+                            placeholder="Nombre"
+                            value={formData.first_name}
+                            onChange={handleInputChange}
                             aria-label="Insertar Nombre"
                         />
-                        
                         <StyledInput 
                             type="text" 
-                            placeholder="Apellidos" 
+                            name="last_name" 
+                            placeholder="Apellidos"
+                            value={formData.last_name}
+                            onChange={handleInputChange}
                             aria-label="Insertar Apellidos"
                         />
                         
                         <StyledInput 
                             type="email" 
-                            placeholder="Correo electrónico" 
-                            aria-label=" Insertar Correo electrónico"
+                            name="email" 
+                            placeholder="Correo electrónico"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            aria-label="Insertar Correo electrónico"
                         />
                         
                         <StyledInput 
                             type="password" 
-                            placeholder="Contraseña" 
+                            name= "password"
+                            placeholder="Contraseña"
+                            value={formData.password}
+                            onChange={handleInputChange}
                             aria-label="Insertar Contraseña"
                         />
                         <DropdownContainer>
                             <Dropdown 
                                 options={schoolOptions}
                                 onSelect={handleSchoolSelect}
-                                buttonText={selectedOptionSchool || "Escuela"}
+                                buttonText={formData.school || "Escuela"}
                                 aria-label="Seleccionar opción de escuela"
                             />
                         </DropdownContainer>
-
                         <ButtonContainer>
                             <LargeButton 
                                 type="submit" 

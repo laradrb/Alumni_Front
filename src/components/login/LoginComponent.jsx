@@ -50,6 +50,8 @@ const LoginComponent = () => {
       }
   
       localStorage.setItem('accessToken', userData.access);
+      localStorage.setItem('userId', userData.user_id); 
+      localStorage.setItem('authToken', userData.access);
   
       console.log(`User role: ${userData.role}`);
   

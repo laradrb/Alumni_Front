@@ -86,10 +86,6 @@ const CompaniesForm = () => {
         }
         console.log("Valores enviados:", { company_name, nif, email, password, website, phone, description });
 
-        if (!company_name || !nif || !email || !password || !website || !phone || !description) {
-            alert("Por favor, completa todos los campos.");
-            return;
-        }
 
         try {
             const token = localStorage.getItem('authToken');
@@ -161,9 +157,10 @@ const CompaniesForm = () => {
 
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.delete(`${API_BASE_URL}/api/deleteAccount/${userId}`, {
+            const response = await axios.delete(`${API_BASE_URL}/api/users/delete/${userId}/`, {
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json'
                 }
             });
             console.log('Cuenta borrada:', response.data);

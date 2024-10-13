@@ -30,7 +30,6 @@ const RegisterCompanyComponent = () => {
         role: 'empresa'
     });
 
-    // Maneja el cambio de los inputs
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevFormData => ({
@@ -39,9 +38,8 @@ const RegisterCompanyComponent = () => {
         }));
     };
 
-    // Maneja el registro
     const handleSignUp = async (e) => {
-        e.preventDefault();  // Evita que el formulario se envíe automáticamente
+        e.preventDefault();
         console.log("Final formData:", formData);
         const { company_name, nif, email, password } = formData;
 

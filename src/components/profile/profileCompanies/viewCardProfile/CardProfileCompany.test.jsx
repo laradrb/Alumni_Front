@@ -31,7 +31,7 @@ describe('CardProfileCompany Component', () => {
         );
 
         const defaultName = screen.getByText(/Your Name/i);
-        const defaultDescription = screen.getByText(/Describe your offerJob.../i);
+        const defaultDescription = screen.getByText(/Describe your company.../i);
 
         expect(defaultName).toBeInTheDocument();
         expect(defaultDescription).toBeInTheDocument();

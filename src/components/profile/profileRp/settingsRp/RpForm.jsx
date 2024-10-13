@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import SaveButton from '../../../atom/SaveButton'
 import axios from 'axios';
 import DropdownMediumButton from '../../../atom/DropdownMediumButton'
@@ -6,18 +7,25 @@ import GlobalStyle from '../../../../styled/GlobalStyle';
 import { ProfileRpTitle, ProfileRpContainer, SectionWrapper, ImageSectionRpProfile, StyledImageRpProfile, FormSectionRpProfile, StyledRpProfile, StyledRpSectionDrowdowButton, SectionButtonRp, FormSectionRpProfile1, StyledRpProfile1, SectionButtonRp2, PopoverWrapper } from './styledRpForm'
 import CardPopover from '../../../cardPopover/CardPopover';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
 const RpForm = () => {
+    const navigate = useNavigate();
     const [profileImage, setProfileImage] = useState(null);
     const [imagePreview, setImagePreview] = useState('');
     const [selectedOptionSchool, setSelectedOptionSchool] = useState('');
     const [formData, setFormData] = useState({
-        name: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        school_id: '',
+        school_name: '',
+        role: 'rp',
     });
     const [showDeletePopover, setShowDeletePopover] = useState(false);
+
+    console.log("Estado actual del formulario:", formData);
 
     const schoolOptions = ['Factoria F5 Barcelona', 'Factoria F5 Madrid', 'Factoria F5 Asturias'];
     
@@ -33,6 +41,7 @@ const RpForm = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        console.log(`Cambiando el campo ${name} a:`, value); 
         setFormData(prevState => ({
             ...prevState,
             [name]: value
@@ -41,25 +50,55 @@ const RpForm = () => {
 
     const handleSave = async (e) => {
         e.preventDefault();
+        const userId = localStorage.getItem('userId'); 
+    
         try {
             const formDataToSend = new FormData();
-            Object.keys(formData).forEach(key => formDataToSend.append(key, formData[key]));
-            formDataToSend.append('school', selectedOptionSchool);
+    
+            const { first_name, last_name, email, password, school_id, school_name } = formData;
+    
+            formDataToSend.append('first_name', first_name);
+            formDataToSend.append('last_name', last_name);
+            formDataToSend.append('email', email);
+            formDataToSend.append('password', password);
+            formDataToSend.append('school_id', school_id || ''); 
+            formDataToSend.append('school_name', selectedOptionSchool); 
+    
             if (profileImage) {
                 formDataToSend.append('profileImage', profileImage);
             }
-
-            const response = await axios.post('/api/saveProfile', formDataToSend, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+    
+            const token = localStorage.getItem('authToken');
+    
+            const response = await axios.put(
+                `${API_BASE_URL}/api/users/update/${userId}/${formData.role}/`,
+                formDataToSend,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'multipart/form-data'
+                    }
                 }
-            });
-            console.log('Datos guardados:', response.data);
-            // Aquí puedes añadir lógica adicional después de guardar exitosamente, como mostrar un mensaje de éxito
+            );
+    
+            if (response.status === 200) {
+                const data = response.data;
+                localStorage.setItem('accessToken', data.token);
+                localStorage.setItem('userNombre', data.first_name);
+                localStorage.setItem('userApellido', data.last_name);
+                localStorage.setItem('userEmail', data.email);
+                localStorage.setItem('userPassword', data.password);
+                alert("¡Datos modificados con éxito!");
+                navigate("/rp/perfil-rp");
+            } else {
+                alert("Error: " + response.data.message);
+            }
         } catch (error) {
-            console.error('Error al guardar los datos:', error);
-            // Aquí puedes manejar los errores, por ejemplo, mostrando un mensaje al usuario
+            alert("Ocurrió un error: " + (error.response?.data?.error || error.message || "Por favor, intenta de nuevo más tarde."));
         }
+    
+        setProfileImage(null);
+        setImagePreview('');
     };
 
     const handleDeleteAccount = () => {
@@ -67,14 +106,37 @@ const RpForm = () => {
     };
 
     const confirmDeleteAccount = async () => {
+        const userId = localStorage.getItem('userId');
+        const school_id = localStorage.getItem('school_id'); // Might be missing
+    
+        console.log("userId en confirmDeleteAccount:", userId);
+        console.log("school_id en confirmDeleteAccount:", school_id); // Debug line
+    
+        if (!userId) {
+            alert("No se pudo encontrar el ID de usuario. Asegúrate de haber iniciado sesión.");
+            return;
+        }
+    
+        if (!school_id) {
+            console.warn("No se pudo encontrar el ID de escuela. Continuando sin él.");
+        }
+    
         try {
-            const response = await axios.delete('/api/deleteAccount');
+            const token = localStorage.getItem('authToken');
+            const response = await axios.delete(`${API_BASE_URL}/api/users/delete/${userId}/`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
             console.log('Cuenta borrada:', response.data);
-            // Aquí puedes añadir lógica adicional después de borrar la cuenta, como redireccionar al usuario
+            alert("Tu cuenta ha sido eliminada.");
+            window.location.href = '/preregister'; 
         } catch (error) {
             console.error('Error al borrar la cuenta:', error);
-            // Aquí puedes manejar los errores, por ejemplo, mostrando un mensaje al usuario
+            alert('Hubo un problema al borrar la cuenta. Inténtalo nuevamente.');
         }
+    
         setShowDeletePopover(false);
     };
 
@@ -110,15 +172,17 @@ const RpForm = () => {
                 <FormSectionRpProfile>
                     <StyledRpProfile
                         type="text" 
-                        name="name"
-                        value={formData.name}
+                        id="first_name"
+                        name="first_name"
+                        value={formData.first_name}
                         onChange={handleInputChange}
                         placeholder="Nombre" 
                         aria-label="Insertar Nombre de Responsable de Formación" />
                     <StyledRpProfile
-                        type="text" 
-                        name="lastName"
-                        value={formData.lastName}
+                        type="text"
+                        id="last_name" 
+                        name="last_name"
+                        value={formData.last_name}
                         onChange={handleInputChange}
                         placeholder="Apellidos" 
                         aria-label="Insertar Apellidos" /> 
@@ -133,6 +197,7 @@ const RpForm = () => {
                     <SectionButtonRp>
                         <SaveButton 
                             text="Borrar cuenta"
+                            type="button"
                             onClick={handleDeleteAccount}
                             aria-pressed="false" 
                             aria-label="Borrar cuenta"
@@ -141,7 +206,8 @@ const RpForm = () => {
                 </FormSectionRpProfile>                 
                 <FormSectionRpProfile1> 
                     <StyledRpProfile1
-                        type="email"  
+                        type="email"
+                        id="email" 
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
@@ -149,21 +215,24 @@ const RpForm = () => {
                         aria-label="Insertar Correo electrónico" />  
                     <StyledRpProfile1
                         type="password"  
+                        id="password"
                         name="password"
                         value={formData.password}
                         onChange={handleInputChange}
                         placeholder="Contraseña" 
                         aria-label="Insertar contraseña" />      
                     <StyledRpProfile1
-                        type="password"  
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
+                        type="password" 
+                        id="confirm_password" 
+                        name="confirm_password"
+                        value={formData.confirm_password}
                         onChange={handleInputChange}
                         placeholder="Confirmar Contraseña" 
                         aria-label="Insertar confirmación de contraseña" /> 
                     <SectionButtonRp2>
                     <SaveButton
                         text="Guardar cambios"
+                        type="submit"
                         onClick={handleSave}
                         aria-pressed="false" 
                         aria-label="Guardar cambios"

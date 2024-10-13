@@ -27,7 +27,7 @@ const CardProfileCompany = ({ name,  description }) => {
                 </Link>
             </NameEditContainer>
             <OfferJob>
-                {description || 'Describe your offerJob...'}
+                {description || 'Describe your company...'}
             </OfferJob>
             <ButtonContainer>
                 <SmallButton 

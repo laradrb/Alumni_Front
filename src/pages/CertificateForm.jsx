@@ -1,9 +1,10 @@
 import React from 'react'
+import SettingsCertificate from '../components/profile/profileCoder/settingsCertificate/SettingsCertificateComponent'
 
 const CertificateForm = () => {
 return (
     <div>
-    formulario certificado
+    <SettingsCertificate/>
     </div>
 )
 }

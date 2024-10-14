@@ -13,7 +13,7 @@ describe('HalfCircle Component', () => {
 
     test('renders the text content correctly', () => {
         render(<HalfCircle />);
-        const textElement = screen.getByText(/Si eres un desarrollador en busca de nuevas oportunidades/i);
+        const textElement = screen.getByText(/Si te dedicas al desarrollo y buscas nuevas oportunidades/i);
         expect(textElement).toBeInTheDocument();
     });
 });

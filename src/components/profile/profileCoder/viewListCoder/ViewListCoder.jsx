@@ -1,53 +1,42 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import CardListCoder from '../cardListCoder/CardListCoder';
 import { TittleCoder, GeneralContainerCoder } from '../cardListCoder/StyledCardListCoder';
 import Filters from '../filters/Filters';
 
-
 const ViewListCoder = () => {
-    // Simulación de datos que vendrían del backend
-    const fakeCoders = [
-        {
-            id: 1,
-            name: 'John Doe',
-            location: 'Madrid, Spain',
-            gender: 'Male',
-            image: 'https://via.placeholder.com/150'
-        },
-        {
-            id: 2,
-            name: 'Janess Smith',
-            location: 'Barcelona, Spain',
-            gender: 'Female',
-            image: 'https://via.placeholder.com/150'
-        },
-        // Agrega más datos simulados si es necesario
-    ];
-
-    const [coders, setCoders] = useState(fakeCoders); // Usar los datos simulados por ahora
-    const [loading, setLoading] = useState(false); // No necesitamos cargar nada en la simulación
+    const [coders, setCoders] = useState([]); 
+    const [loading, setLoading] = useState(true);
+    const [selectedSkills, setSelectedSkills] = useState([]);
     const [error, setError] = useState(null);
 
-    /*
-    // Descomentar esta parte cuando el backend esté listo
     useEffect(() => {
-        const fetchCoder = async () => {
+        const fetchCoders = async () => {
+            setLoading(true);
             try {
                 const response = await axios.get('/api/coders/');
-                setCoders(response.data);
-                setLoading(false);
+                setCoders(Array.isArray(response.data) ? response.data : []); 
             } catch (error) {
                 setError('Error fetching data');
-                setLoading(false);
+            } finally {
+                setLoading(false); 
             }
         };
-        fetchCoder();
+        fetchCoders();
     }, []);
-    */
+
+    const handleFilterChange = (skills) => {
+        setSelectedSkills(skills); 
+    };
+
+    const filteredCoders = selectedSkills.length > 0
+        ? coders.filter(coder => selectedSkills.some(skill => coder.skills.includes(skill)))
+        : coders;
 
     if (loading) {
         return <p>Cargando datos...</p>;
     }
+
     if (error) {
         return <p>{error}</p>;
     }
@@ -56,13 +45,12 @@ const ViewListCoder = () => {
         <>
             <TittleCoder>Coders</TittleCoder>
             <GeneralContainerCoder>
-            <Filters />
-                {coders.map(coder => (
+                <Filters onFilterChange={handleFilterChange} />
+                {filteredCoders.map(coder => (
                     <CardListCoder
                         key={coder.id}
                         name={coder.name}
                         location={coder.location}
-                        gender={coder.gender}
                         image={coder.image}
                     />
                 ))}

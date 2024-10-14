@@ -14,7 +14,7 @@
 <br>
 
 ## Description 💡
-Factoría F5 Alumni seeks to build a community of ex-coders specialized in technology. Its purpose is to connect graduates with companies that value diverse and inclusive talent, thus facilitating their integration into the labor market. It also offers ex-coders a meeting point through a forum designed to maintain contact and promote continued collaboration. Take a look at our app here [Alumni](https:/)
+Factoría F5 Alumni seeks to build a community of ex-coders specialized in technology. Its purpose is to connect graduates with companies that value diverse and inclusive talent, thus facilitating their integration into the labor market. It also offers ex-coders a meeting point through a forum designed to maintain contact and promote continued collaboration. Take a look at our app here [Alumni](https://www.figma.com/design/YMW3kxeJWyzG5KRoIqMWOI/ALUMNI?node-id=38-93&t=A70doGZY1rO7GtTs-1)
 
 <br>
 
@@ -68,7 +68,7 @@ git clone https://github.com/your-github-profile/your-project-name.git
    npm run dev
 ```
 
-4. Go to our backend repository [Alumni](https://github.com/laradrb/Alumni_Front) and follow its README's instructions:
+4. Go to our backend repository [Alumni](https://github.com/Angelinabassano/Alumni_Back) and follow its README's instructions:
 <br>
 
 ## Use ⌨️

@@ -121,21 +121,6 @@ return (
             </ShowMoreButton>
         )}
         </DropdownContainer>
-
-        <SkillsCard
-            title="Género"
-            skills={expandedCategories.gender ? skillsGender : skillsGender.slice(0, 3)}
-            selectedSkills={selectedSkills}
-            onSkillToggle={handleSkillToggle}
-            customsStyles={{ border: 'none' }}
-        />
-        <DropdownContainer>
-        {skillsGender.length > 3 && (
-            <ShowMoreButton onClick={() => handleShowMore("gender")}>
-            {expandedCategories.gender ? "Ver menos" : "Ver más"}
-            </ShowMoreButton>
-        )}
-        </DropdownContainer>
     </FilterList>
     </SidebarFilter>
 );

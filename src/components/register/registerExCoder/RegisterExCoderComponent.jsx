@@ -76,8 +76,8 @@ const RegisterExCoderComponent = () => {
 
     const promoOptions = [
         { id: 2, name: 'Lola' },
-        { id: 11, name: 'Ana' },
-        { id: 12, name: 'Cristina' }
+        { id: 3, name: 'Ana' },
+        { id: 4, name: 'Cristina' }
     ];
     const schoolOptions = [
         { id: 1, name: 'Factoria F5 Barcelona' },

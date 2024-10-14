@@ -165,7 +165,7 @@ const CompaniesForm = () => {
             });
             console.log('Cuenta borrada:', response.data);
             alert("Tu cuenta ha sido eliminada.");
-            window.location.href = '/preregister'; 
+            window.location.href = '/home'; 
         } catch (error) {
             console.error('Error al borrar la cuenta:', error);
             alert('Hubo un problema al borrar la cuenta. Inténtalo nuevamente.');

@@ -68,7 +68,7 @@ git clone https://github.com/your-github-profile/your-project-name.git
    npm run dev
 ```
 
-4. Go to our backend repository [Alumni](https://github.com/laradrb/Alumni_Front) and follow its README's instructions:
+4. Go to our backend repository [Alumni_Back](https://github.com/Angelinabassano/Alumni_Back) and follow its README's instructions:
 <br>
 
 ## Use ⌨️

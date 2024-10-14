@@ -107,10 +107,10 @@ const RpForm = () => {
 
     const confirmDeleteAccount = async () => {
         const userId = localStorage.getItem('userId');
-        const school_id = localStorage.getItem('school_id'); // Might be missing
+        const school_id = localStorage.getItem('school_id'); 
     
         console.log("userId en confirmDeleteAccount:", userId);
-        console.log("school_id en confirmDeleteAccount:", school_id); // Debug line
+        console.log("school_id en confirmDeleteAccount:", school_id);
     
         if (!userId) {
             alert("No se pudo encontrar el ID de usuario. Asegúrate de haber iniciado sesión.");
@@ -131,7 +131,7 @@ const RpForm = () => {
             });
             console.log('Cuenta borrada:', response.data);
             alert("Tu cuenta ha sido eliminada.");
-            window.location.href = '/preregister'; 
+            window.location.href = '/home'; 
         } catch (error) {
             console.error('Error al borrar la cuenta:', error);
             alert('Hubo un problema al borrar la cuenta. Inténtalo nuevamente.');
